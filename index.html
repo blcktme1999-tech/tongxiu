@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>童序 Tongxu · 台灣最溫暖的親子成長媒體社群</title>
+<meta name="description" content="童序是聚集家長的親子成長媒體與社群平台。精選親子活動、專家育兒觀點、親子景點導覽與教育資源，讓每個家庭更輕鬆找到適合孩子的體驗。">
+<meta property="og:title" content="童序 Tongxu · 台灣最溫暖的親子成長媒體社群">
+<meta property="og:description" content="精選親子活動、專家育兒觀點、親子景點導覽與教育資源。">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FCF9F3; --cream-2:#F6EFE3; --beige:#EFE4D2;
+  --ink:#33302A; --ink-soft:#635D53; --muted:#948C7E;
+  --line:rgba(51,48,42,.08);
+  --orange:#EE8F4E; --orange-2:#E87B36; --orange-soft:#F9C9A3; --orange-tint:#FCEBDD;
+  --green:#8DBE6E; --green-2:#79AB5B; --green-soft:#BEDDA6; --green-tint:#EDF4E3;
+  --blue:#6FAAD0; --blue-tint:#E6F0F7;
+  --pink:#F0A5B5; --pink-tint:#FCE7EC;
+  --plum:#8C6FA6; --plum-tint:#EFE8F4;
+  --white:#ffffff;
+  --radius:26px; --radius-sm:16px; --radius-lg:38px;
+  --shadow-xs:0 2px 8px rgba(96,80,55,.05);
+  --shadow-sm:0 4px 18px rgba(96,80,55,.07);
+  --shadow:0 18px 44px rgba(96,80,55,.11);
+  --shadow-lg:0 34px 80px rgba(96,80,55,.17);
+  --maxw:1200px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;overflow-x:hidden;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.display{font-family:"Baloo 2","Noto Sans TC",sans-serif;letter-spacing:.01em;line-height:1.24}
+.serif{font-family:"Noto Serif TC",serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-2);background:var(--orange-tint);padding:7px 16px;border-radius:999px;margin-bottom:20px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+/* ---------- ANNOUNCE BAR ---------- */
+.announce{background:linear-gradient(90deg,var(--ink),#4a463d);color:#F3ECDF;text-align:center;font-size:.9rem;padding:9px 16px;position:relative;z-index:120}
+.announce a{color:var(--orange-soft);font-weight:700;border-bottom:1px solid rgba(249,201,163,.4)}
+.announce .tag{background:var(--orange);color:#fff;font-family:"Baloo 2";font-weight:700;font-size:.72rem;padding:2px 9px;border-radius:999px;margin-right:9px;letter-spacing:.04em}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:58px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:var(--maxw);z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 12px 9px 20px;border-radius:999px;background:rgba(252,249,243,.72);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow-sm);transition:top .4s var(--ease),box-shadow .4s var(--ease),background .4s var(--ease)}
+.nav.scrolled{top:14px;box-shadow:var(--shadow);background:rgba(252,249,243,.92)}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Baloo 2";font-weight:800;font-size:1.26rem;color:var(--ink)}
+.brand img{width:40px;height:40px;border-radius:12px;object-fit:cover;box-shadow:var(--shadow-sm)}
+.brand small{display:block;font-family:"Noto Sans TC";font-weight:400;font-size:.6rem;letter-spacing:.22em;color:var(--muted);margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-weight:500;font-size:.95rem;color:var(--ink-soft);padding:9px 14px;border-radius:999px;transition:.25s var(--ease)}
+.nav-links a:hover{color:var(--ink);background:rgba(255,255,255,.85)}
+.nav-cta{font-family:"Baloo 2";font-weight:700;font-size:.94rem;color:#fff;background:var(--orange);padding:11px 22px;border-radius:999px;box-shadow:0 8px 20px rgba(238,143,78,.36);transition:.28s var(--ease)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(238,143,78,.46)}
+.burger{display:none;flex-direction:column;gap:5px;padding:12px;border-radius:14px;background:rgba(255,255,255,.7);cursor:pointer;border:none}
+.burger span{width:22px;height:2.4px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:190px 0 96px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(58% 55% at 10% 6%,var(--green-tint) 0%,transparent 55%),radial-gradient(52% 55% at 94% 10%,var(--blue-tint) 0%,transparent 55%),radial-gradient(70% 62% at 82% 100%,var(--orange-tint) 0%,transparent 60%);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.hero-rating{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.8);padding:6px 14px 6px 8px;border-radius:999px;margin-bottom:22px;box-shadow:var(--shadow-xs)}
+.hero-rating .av{display:flex}
+.hero-rating .av span{width:26px;height:26px;border-radius:50%;border:2px solid #fff;margin-left:-8px;display:grid;place-items:center;font-size:.8rem}
+.hero-rating .av span:first-child{margin-left:0}
+.hero-rating small{font-size:.82rem;color:var(--ink-soft);font-weight:500}
+.hero-rating b{color:var(--ink)}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.15rem);font-weight:800;color:var(--ink);margin-bottom:22px}
+.hero h1 .hl{color:var(--orange-2);position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.32em;background:var(--orange-soft);opacity:.5;border-radius:4px;z-index:-1}
+.hero p.sub{font-size:1.18rem;color:var(--ink-soft);max-width:530px;margin-bottom:34px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.btn{font-family:"Baloo 2";font-weight:700;font-size:1.04rem;padding:16px 32px;border-radius:999px;cursor:pointer;border:none;transition:.3s var(--ease);display:inline-flex;align-items:center;gap:9px}
+.btn-primary{color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-2));box-shadow:0 14px 30px rgba(238,143,78,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 44px rgba(238,143,78,.5)}
+.btn-glass{color:var(--ink);background:rgba(255,255,255,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);box-shadow:var(--shadow-sm)}
+.btn-glass:hover{transform:translateY(-3px);background:rgba(255,255,255,.9);box-shadow:var(--shadow)}
+.hero-trust{display:flex;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;font-weight:500}
+.hero-trust span{display:inline-flex;align-items:center;gap:7px}
+.hero-trust b{font-family:"Baloo 2";color:var(--ink);font-size:1.02rem}
+.hero-visual{position:relative}
+.hero-visual .photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3.5}
+.hero-visual .photo img{width:100%;height:100%;object-fit:cover}
+.hero-badge{position:absolute;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:20px;padding:13px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px;font-weight:700;font-family:"Baloo 2"}
+.hero-badge .dot{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem}
+.badge-1{top:24px;left:-24px;animation:float 5s var(--ease) infinite}
+.badge-2{bottom:36px;right:-22px;animation:float 5s var(--ease) infinite .8s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ---------- MARQUEE / LOGOS ---------- */
+.trustbar{padding:34px 0 10px}
+.trustbar p{text-align:center;color:var(--muted);font-size:.84rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:22px}
+.logos{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.logos .lg{font-family:"Baloo 2";font-weight:700;color:var(--ink-soft);opacity:.6;font-size:1.02rem;padding:8px 20px;border-radius:14px;background:#fff;box-shadow:var(--shadow-xs);border:1px solid var(--line);transition:.3s var(--ease)}
+.logos .lg:hover{opacity:1;transform:translateY(-3px);color:var(--orange-2)}
+
+/* ---------- SECTION ---------- */
+section{position:relative}
+.sec{padding:104px 0}
+.sec-head{text-align:center;max-width:740px;margin:0 auto 62px}
+.sec-head h2{font-size:clamp(2.05rem,3.9vw,3rem);font-weight:800;margin-bottom:16px}
+.sec-head p{font-size:1.1rem;color:var(--ink-soft)}
+.sec-head.left{text-align:left;margin-left:0}
+.sec-flex{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sec-flex h2{font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:800;margin-bottom:8px}
+.sec-flex p{color:var(--ink-soft);font-size:1.04rem;max-width:520px}
+.link-more{font-family:"Baloo 2";font-weight:700;color:var(--orange-2);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;transition:.25s var(--ease)}
+.link-more:hover{gap:11px}
+
+/* ---------- ABOUT / VALUE ---------- */
+.about-lead{max-width:840px;margin:0 auto 58px;text-align:center}
+.about-lead p{font-size:1.24rem;color:var(--ink-soft);margin-bottom:18px}
+.about-lead p strong{color:var(--ink);font-weight:700}
+.card-row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.mini-card{background:#fff;border-radius:var(--radius);padding:34px 27px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:.4s var(--ease)}
+.mini-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.mini-card .ic{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:20px}
+.mini-card h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.mini-card p{font-size:.95rem;color:var(--muted)}
+.tint-o{background:var(--orange-tint)}.tint-g{background:var(--green-tint)}.tint-b{background:var(--blue-tint)}.tint-p{background:var(--pink-tint)}.tint-v{background:var(--plum-tint)}
+
+/* ---------- FEATURED EDITORIAL ---------- */
+.featured{background:var(--cream-2)}
+.feat-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:26px}
+.feat-hero{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:440px;cursor:pointer;transition:.45s var(--ease)}
+.feat-hero:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.feat-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s var(--ease)}
+.feat-hero:hover img{transform:scale(1.06)}
+.feat-hero .grad{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(35,32,27,.15) 55%,rgba(35,32,27,.82) 100%)}
+.feat-hero .body{position:absolute;left:0;right:0;bottom:0;padding:38px 36px;color:#fff}
+.cat-chip{display:inline-block;font-family:"Baloo 2";font-weight:700;font-size:.76rem;letter-spacing:.06em;padding:5px 13px;border-radius:999px;color:#fff;margin-bottom:14px}
+.cat-o{background:var(--orange)}.cat-g{background:var(--green-2)}.cat-b{background:var(--blue)}.cat-p{background:var(--pink)}.cat-v{background:var(--plum)}
+.feat-hero h3{font-size:1.8rem;font-weight:800;margin-bottom:10px;line-height:1.3}
+.feat-hero .meta{font-size:.88rem;opacity:.9;font-weight:500}
+.feat-side{display:flex;flex-direction:column;gap:20px}
+.feat-mini{display:flex;gap:16px;background:#fff;border-radius:var(--radius-sm);padding:14px;box-shadow:var(--shadow-xs);border:1px solid var(--line);transition:.35s var(--ease);cursor:pointer;flex:1}
+.feat-mini:hover{transform:translateX(5px);box-shadow:var(--shadow-sm)}
+.feat-mini .thumb{width:112px;flex-shrink:0;border-radius:12px;overflow:hidden}
+.feat-mini .thumb img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.feat-mini .txt{display:flex;flex-direction:column;justify-content:center}
+.feat-mini h4{font-size:1.06rem;font-weight:700;margin-bottom:6px;line-height:1.4}
+.feat-mini .meta{font-size:.8rem;color:var(--muted);font-weight:500}
+.feat-mini .cat-chip{margin-bottom:8px;font-size:.7rem;padding:3px 10px}
+
+/* ---------- RESOURCES ---------- */
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.res-card{border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:.45s var(--ease);cursor:pointer}
+.res-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+.res-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.res-img img{width:100%;height:100%;object-fit:cover;transition:.7s var(--ease)}
+.res-card:hover .res-img img{transform:scale(1.09)}
+.res-img .count{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);color:var(--ink);font-family:"Baloo 2";font-weight:700;font-size:.76rem;padding:4px 11px;border-radius:999px}
+.res-body{padding:20px 22px 24px;display:flex;align-items:center;justify-content:space-between}
+.res-body h3{font-size:1.12rem;font-weight:700}
+.res-body .arw{color:var(--orange-2);font-size:1.2rem;opacity:0;transform:translateX(-6px);transition:.35s var(--ease)}
+.res-card:hover .res-body .arw{opacity:1;transform:translateX(0)}
+
+/* ---------- EXPERTS ---------- */
+.experts{background:linear-gradient(180deg,var(--plum-tint),var(--cream))}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.exp-card{background:#fff;border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:.4s var(--ease);position:relative}
+.exp-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.exp-card .quote{font-family:"Noto Serif TC";font-weight:700;font-size:2.6rem;color:var(--plum);opacity:.28;line-height:1;height:26px}
+.exp-card blockquote{font-family:"Noto Serif TC";font-weight:600;font-size:1.12rem;color:var(--ink);line-height:1.75;margin:8px 0 24px}
+.exp-who{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:20px}
+.exp-who .ava{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;flex-shrink:0}
+.exp-who b{display:block;font-family:"Baloo 2";font-size:1.02rem}
+.exp-who small{color:var(--muted);font-size:.85rem}
+
+/* ---------- STEPS ---------- */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+.step{background:#fff;border-radius:var(--radius);padding:36px 30px;box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative;transition:.4s var(--ease)}
+.step:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.step .no{counter-increment:step;font-family:"Baloo 2";font-weight:800;font-size:2.6rem;color:var(--orange-soft);line-height:1;margin-bottom:14px}
+.step .no::before{content:"0" counter(step)}
+.step h3{font-size:1.24rem;font-weight:700;margin-bottom:8px}
+.step p{color:var(--ink-soft);font-size:.96rem}
+
+/* ---------- COMMUNITY ---------- */
+.comm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.comm-card{background:#fff;border-radius:var(--radius);padding:34px 28px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:.4s var(--ease);position:relative;overflow:hidden}
+.comm-card::after{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;opacity:.5;transition:.5s var(--ease)}
+.comm-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.comm-card:hover::after{transform:scale(1.4)}
+.comm-card .ic{font-size:2.2rem;margin-bottom:16px;position:relative}
+.comm-card h3{font-size:1.22rem;font-weight:700;margin-bottom:10px;position:relative}
+.comm-card p{font-size:.97rem;color:var(--ink-soft);position:relative}
+.comm-card:nth-child(1)::after{background:var(--orange-soft)}
+.comm-card:nth-child(2)::after{background:var(--green-soft)}
+.comm-card:nth-child(3)::after{background:var(--blue)}
+.comm-card:nth-child(4)::after{background:var(--pink)}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi{background:linear-gradient(180deg,var(--green-tint),var(--cream))}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.85);border-radius:var(--radius);padding:32px 28px;transition:.4s var(--ease)}
+.testi-card:hover{transform:translateY(-6px);background:#fff;box-shadow:var(--shadow)}
+.stars{color:var(--orange);letter-spacing:3px;margin-bottom:14px;font-size:.95rem}
+.testi-card p{font-size:1rem;color:var(--ink);line-height:1.8;margin-bottom:22px}
+.testi-who{display:flex;align-items:center;gap:12px}
+.testi-who .ava{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+.testi-who b{display:block;font-size:.98rem;font-family:"Baloo 2"}
+.testi-who small{color:var(--muted);font-size:.82rem}
+
+/* ---------- STATS ---------- */
+.stats{background:linear-gradient(135deg,#F3A465,var(--orange-2));color:#fff;border-radius:var(--radius-lg);padding:66px 40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.stats::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 90% at 15% 0%,rgba(255,255,255,.22),transparent 60%),radial-gradient(50% 90% at 90% 100%,rgba(255,255,255,.16),transparent 60%)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative}
+.stat{text-align:center}
+.stat .num{font-family:"Baloo 2";font-weight:800;font-size:clamp(2.6rem,5vw,3.7rem);line-height:1}
+.stat .lbl{font-size:1.04rem;margin-top:10px;opacity:.95;font-weight:500}
+
+/* ---------- FAQ ---------- */
+.faq-wrap{max-width:820px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:14px;overflow:hidden;transition:.35s var(--ease)}
+.faq-item[open]{box-shadow:var(--shadow-sm)}
+.faq-item summary{list-style:none;cursor:pointer;padding:24px 28px;font-family:"Baloo 2";font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .pm{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:var(--orange-tint);color:var(--orange-2);display:grid;place-items:center;font-size:1.3rem;transition:.3s var(--ease)}
+.faq-item[open] summary .pm{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq-item .ans{padding:0 28px 26px;color:var(--ink-soft);font-size:1rem}
+
+/* ---------- CTA ---------- */
+.cta-banner{background:linear-gradient(135deg,var(--green),var(--green-2));border-radius:var(--radius-lg);padding:80px 40px;text-align:center;color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.cta-banner::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% -10%,rgba(255,255,255,.25),transparent 60%)}
+.cta-banner .eyebrow{background:rgba(255,255,255,.2);color:#fff;position:relative}
+.cta-banner .eyebrow::before{background:#fff}
+.cta-banner h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:14px;position:relative}
+.cta-banner p{font-size:1.12rem;opacity:.96;margin-bottom:34px;position:relative;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-banner .btn{background:#fff;color:var(--green-2);box-shadow:0 14px 30px rgba(0,0,0,.15)}
+.cta-banner .btn:hover{transform:translateY(-3px);box-shadow:0 22px 44px rgba(0,0,0,.2)}
+.cta-banner .btn.ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5)}
+.cta-banner .btn.ghost:hover{background:rgba(255,255,255,.25)}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--ink);color:#EDE7DC;padding:74px 0 34px;margin-top:104px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand{display:flex;align-items:center;gap:12px;font-family:"Baloo 2";font-weight:800;font-size:1.4rem;margin-bottom:16px}
+.foot-brand img{width:46px;height:46px;border-radius:13px;object-fit:cover}
+.foot-brand-col p{color:#B7AF9F;font-size:.97rem;max-width:320px}
+.foot-col h4{font-family:"Baloo 2";font-size:1.04rem;margin-bottom:18px;color:#fff}
+.foot-col a{display:block;color:#B7AF9F;font-size:.95rem;padding:6px 0;transition:.25s}
+.foot-col a:hover{color:var(--orange-soft);padding-left:5px}
+.foot-news p{color:#B7AF9F;font-size:.92rem;margin-bottom:16px}
+.news-form{display:flex;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 6px 6px 18px}
+.news-form input{flex:1;background:none;border:none;outline:none;color:#fff;font-size:.92rem;font-family:inherit}
+.news-form input::placeholder{color:#8F887B}
+.news-form button{font-family:"Baloo 2";font-weight:700;font-size:.9rem;background:var(--orange);color:#fff;border:none;padding:10px 20px;border-radius:999px;cursor:pointer;transition:.28s var(--ease)}
+.news-form button:hover{background:var(--orange-2)}
+.socials{display:flex;gap:12px;margin-top:20px}
+.socials a{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-weight:700;font-family:"Baloo 2";transition:.3s var(--ease)}
+.socials a:hover{background:var(--orange);transform:translateY(-3px)}
+.copy{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:28px;color:#8F887B;font-size:.88rem}
+.copy .fl{display:flex;gap:20px}
+.copy .fl a:hover{color:var(--orange-soft)}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+.menu-only{display:none}
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1000px){
+  .card-row,.comm-grid,.res-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-grid,.steps-grid,.testi-grid{grid-template-columns:1fr}
+  .hero-grid,.feat-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{max-width:540px;margin:0 auto;width:100%}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero{padding:150px 0 80px}
+}
+@media(max-width:640px){
+  .nav-links{display:none}.burger{display:flex}
+  .nav>div .nav-cta{display:none}
+  .nav-links.open .menu-only{display:block;text-align:center;color:#fff;background:var(--orange);margin-top:6px}
+  .brand small{display:none}
+  .nav{padding:8px 10px 8px 14px}
+  .brand{font-size:1.14rem;gap:9px}.brand img{width:36px;height:36px}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;right:0;background:rgba(252,249,243,.97);backdrop-filter:blur(18px);padding:14px;border-radius:24px;box-shadow:var(--shadow);gap:4px;min-width:210px;align-items:stretch}
+  .nav-links.open a{padding:12px 18px}
+  .hero{padding:130px 0 66px}
+  .sec{padding:72px 0}
+  .card-row,.comm-grid,.res-grid,.stats-grid{grid-template-columns:1fr}
+  .stats,.cta-banner{padding:48px 26px}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-btns .btn,.hero-btns,.cta-btns .btn{width:100%}.hero-btns .btn,.cta-btns .btn{justify-content:center}
+  .feat-hero{min-height:340px}.feat-hero .body{padding:28px 24px}.feat-hero h3{font-size:1.4rem}
+  .copy{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="announce"><span class="tag">新上線</span>童序 2026 夏季親子活動指南已發布 · <a href="#featured">立即閱讀 →</a></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="brand" href="#home"><img src="assets/logo.jpg" alt="童序 logo"><span>童序<small>TONGXU · 親子成長社群</small></span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#featured">精選專欄</a>
+    <a href="#resources">親子資源</a>
+    <a href="#experts">專家觀點</a>
+    <a href="#community">社群</a>
+    <a href="#faq">常見問題</a>
+    <a href="#cta" class="nav-cta menu-only">免費加入 →</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <a href="#cta" class="nav-cta">免費加入</a>
+    <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <div class="hero-rating">
+        <div class="av"><span class="tint-o">👦</span><span class="tint-g">👧</span><span class="tint-b">🧒</span></div>
+        <small><b>1,000+ 家庭</b> 每天在童序找到好活動</small>
+      </div>
+      <h1>陪伴每個家庭，<br>探索孩子<span class="hl">成長的每一步</span>。</h1>
+      <p class="sub">童序集結精選親子活動、專家育兒觀點與親子景點導覽，用媒體的深度與社群的溫度，讓每個家庭都能更輕鬆找到適合孩子的體驗。</p>
+      <div class="hero-btns">
+        <a href="#cta" class="btn btn-primary">免費加入社群 →</a>
+        <a href="#featured" class="btn btn-glass">▶ 看精選內容</a>
+      </div>
+      <div class="hero-trust">
+        <span>⭐ <b>4.9</b> 家長評價</span>
+        <span>📰 <b>200+</b> 精選專欄</span>
+        <span>🗺️ <b>500+</b> 景點整理</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal in d2">
+      <div class="photo"><img src="assets/hero.png" alt="快樂的親子時光"></div>
+      <div class="hero-badge badge-1"><span class="dot tint-g">🌱</span><div>用心陪伴<br><span style="font-weight:400;font-size:.82rem;color:var(--muted)">每一步成長</span></div></div>
+      <div class="hero-badge badge-2"><span class="dot tint-o">💛</span><div>1000+ 家庭<br><span style="font-weight:400;font-size:.82rem;color:var(--muted)">一起同行</span></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST BAR -->
+<div class="trustbar reveal">
+  <div class="wrap">
+    <p>受到全台家長與親子品牌的信任</p>
+    <div class="logos">
+      <span class="lg">親子共學會</span>
+      <span class="lg">兒童博物館聯盟</span>
+      <span class="lg">家庭教育協會</span>
+      <span class="lg">親子友善店家</span>
+      <span class="lg">週末探索家</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT / VALUE -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">About Us</span><h2>關於童序</h2></div>
+    <div class="about-lead reveal d1">
+      <p class="serif"><strong>童序相信，每一次陪伴，都是孩子成長的重要片段。</strong></p>
+      <p>我們把散落各處的親子活動、景點與育兒知識，用媒體的專業與社群的溫度重新整理，讓忙碌的家長不再花時間搜尋，就能安心地為孩子挑選最好的體驗。</p>
+    </div>
+    <div class="card-row">
+      <div class="mini-card reveal d1"><div class="ic tint-o">🤝</div><h3>真心陪伴</h3><p>每一段共處，都是最珍貴的學習。</p></div>
+      <div class="mini-card reveal d2"><div class="ic tint-g">🌿</div><h3>用心成長</h3><p>陪孩子在探索中發現世界的美好。</p></div>
+      <div class="mini-card reveal d3"><div class="ic tint-b">💬</div><h3>社群共享</h3><p>家長彼此交流，經驗成為養分。</p></div>
+      <div class="mini-card reveal d4"><div class="ic tint-p">🧭</div><h3>持續探索</h3><p>不斷發掘適合孩子的新體驗。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED EDITORIAL -->
+<section class="sec featured" id="featured">
+  <div class="wrap">
+    <div class="sec-flex reveal">
+      <div><span class="eyebrow">Featured Stories</span><h2>本週精選專欄</h2><p>由童序編輯團隊與親子專家共同挑選，最值得家長細讀的深度內容。</p></div>
+      <a href="#resources" class="link-more">瀏覽所有專欄 →</a>
+    </div>
+    <div class="feat-grid">
+      <a class="feat-hero reveal d1">
+        <img src="assets/feature-museum.png" alt="親子共遊博物館">
+        <div class="grad"></div>
+        <div class="body">
+          <span class="cat-chip cat-o">深度專題</span>
+          <h3>把博物館變成孩子的第二間教室</h3>
+          <p class="meta">編輯精選 · 8 分鐘閱讀 · 2026.07</p>
+        </div>
+      </a>
+      <div class="feat-side">
+        <a class="feat-mini reveal d2">
+          <div class="thumb"><img src="assets/feature-reading.png" alt="親子共讀"></div>
+          <div class="txt"><span class="cat-chip cat-g">育兒觀點</span><h4>共讀不只是唸故事：培養孩子專注力的 5 個關鍵</h4><span class="meta">5 分鐘閱讀</span></div>
+        </a>
+        <a class="feat-mini reveal d3">
+          <div class="thumb"><img src="assets/outdoor.png" alt="戶外探索"></div>
+          <div class="txt"><span class="cat-chip cat-b">週末指南</span><h4>不用出遠門：城市裡 10 個免費戶外探索地點</h4><span class="meta">6 分鐘閱讀</span></div>
+        </a>
+        <a class="feat-mini reveal d4">
+          <div class="thumb"><img src="assets/craft.png" alt="手作課程"></div>
+          <div class="txt"><span class="cat-chip cat-p">親子手作</span><h4>雨天不無聊：在家就能玩的 8 個親子手作</h4><span class="meta">4 分鐘閱讀</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="sec" id="resources">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Explore Categories</span><h2>親子資源分類</h2><p>從博物館到手作課程，我們把最值得體驗的資源分門別類，讓你更快找到適合孩子的活動。</p></div>
+    <div class="res-grid">
+      <div class="res-card reveal d1"><div class="res-img"><img src="assets/museum.png" alt="親子博物館"><span class="count">86 個</span></div><div class="res-body"><h3>親子博物館</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d2"><div class="res-img"><img src="assets/outdoor.png" alt="戶外探索"><span class="count">124 個</span></div><div class="res-body"><h3>戶外探索</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d3"><div class="res-img"><img src="assets/art.png" alt="藝術展覽"><span class="count">57 個</span></div><div class="res-body"><h3>藝術展覽</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d4"><div class="res-img"><img src="assets/science.png" alt="科學教育"><span class="count">63 個</span></div><div class="res-body"><h3>科學教育</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d1"><div class="res-img"><img src="assets/holiday.png" alt="假日活動"><span class="count">98 個</span></div><div class="res-body"><h3>假日活動</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d2"><div class="res-img"><img src="assets/restaurant.png" alt="親子餐廳"><span class="count">72 個</span></div><div class="res-body"><h3>親子餐廳</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d3"><div class="res-img"><img src="assets/stay.png" alt="親子住宿"><span class="count">41 個</span></div><div class="res-body"><h3>親子住宿</h3><span class="arw">→</span></div></div>
+      <div class="res-card reveal d4"><div class="res-img"><img src="assets/craft.png" alt="手作課程"><span class="count">55 個</span></div><div class="res-body"><h3>手作課程</h3><span class="arw">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTS -->
+<section class="sec experts" id="experts">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Expert Voices</span><h2>專家觀點</h2><p>與兒童發展、教育與心理領域的專業夥伴合作，把可靠的育兒知識帶進每個家庭。</p></div>
+    <div class="exp-grid">
+      <div class="exp-card reveal d1">
+        <div class="quote">"</div>
+        <blockquote>孩子的專注力，不是被教出來的，而是在一次次真實的探索裡自然長出來的。</blockquote>
+        <div class="exp-who"><span class="ava tint-o">👩‍🏫</span><div><b>林曉筑</b><small>兒童發展專家 · 諮商心理師</small></div></div>
+      </div>
+      <div class="exp-card reveal d2">
+        <div class="quote">"</div>
+        <blockquote>選活動不必貴，關鍵是父母有沒有一起投入。陪伴的品質，遠比行程的數量重要。</blockquote>
+        <div class="exp-who"><span class="ava tint-g">👨‍⚕️</span><div><b>陳彥宏</b><small>小兒科醫師 · 兩個孩子的爸</small></div></div>
+      </div>
+      <div class="exp-card reveal d3">
+        <div class="quote">"</div>
+        <blockquote>把親子時光排進行事曆吧。當它變成家庭的固定約定，孩子會記得一輩子。</blockquote>
+        <div class="exp-who"><span class="ava tint-v">👩‍🎓</span><div><b>吳沛璇</b><small>親職教育講師 · 作家</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">How It Works</span><h2>三步驟，開始探索</h2><p>加入童序，比想像中更簡單。</p></div>
+    <div class="steps-grid">
+      <div class="step reveal d1"><div class="no"></div><h3>免費加入社群</h3><p>一分鐘完成註冊，馬上成為童序大家庭的一員。</p></div>
+      <div class="step reveal d2"><div class="no"></div><h3>設定孩子與偏好</h3><p>告訴我們孩子的年齡與喜好，獲得專屬的活動推薦。</p></div>
+      <div class="step reveal d3"><div class="no"></div><h3>探索 · 收藏 · 出發</h3><p>瀏覽精選內容，收藏心動活動，帶孩子一起去體驗。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="sec" id="community" style="background:var(--cream-2);border-radius:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Our Community</span><h2>我們的社群</h2><p>童序不只是資訊平台，更是一個屬於家長的溫暖社群 —— 在這裡分享、討論、彼此陪伴，一起把育兒路走得更踏實。</p></div>
+    <div class="comm-grid">
+      <div class="comm-card reveal d1"><div class="ic">🎈</div><h3>親子活動分享</h3><p>最新活動資訊、家長交流討論、育兒經驗分享與第一手優惠。</p></div>
+      <div class="comm-card reveal d2"><div class="ic">🏷️</div><h3>優惠資訊</h3><p>合作品牌與活動的專屬優惠，家長不再錯過每一次好機會。</p></div>
+      <div class="comm-card reveal d3"><div class="ic">🗺️</div><h3>親子景點</h3><p>博物館、公園、展覽 —— 精選最適合帶孩子探索的好去處。</p></div>
+      <div class="comm-card reveal d4"><div class="ic">📚</div><h3>家庭成長</h3><p>陪伴孩子共同學習，讓每個家庭都能一起前進。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec testi" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Parents Love Us</span><h2>家長的真實回饋</h2><p>來自社群裡上千個家庭的分享 —— 這是我們最珍惜的肯定。</p></div>
+    <div class="testi-grid">
+      <div class="testi-card reveal d1"><div class="stars">★★★★★</div><p>「以前找活動要滑好幾個網站，現在打開童序就搞定。分類清楚、資訊又新，每個週末都不怕沒地方帶孩子去。」</p><div class="testi-who"><span class="ava tint-o">👩</span><div><b>Amy 媽咪</b><small>台北 · 5 歲女兒的媽</small></div></div></div>
+      <div class="testi-card reveal d2"><div class="stars">★★★★★</div><p>「最喜歡專家觀點那一區，很多育兒的疑惑都在這裡找到答案。感覺不只是找活動，更像有人陪著一起帶孩子。」</p><div class="testi-who"><span class="ava tint-g">👨</span><div><b>阿宏爸</b><small>台中 · 雙寶爸</small></div></div></div>
+      <div class="testi-card reveal d3"><div class="stars">★★★★★</div><p>「社群裡的家長都好熱心，分享的都是實際去過的心得。第一手優惠也幫我們省了不少，真心推薦給每個家庭。」</p><div class="testi-who"><span class="ava tint-b">👩</span><div><b>Joyce</b><small>新竹 · 3 歲兒子的媽</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sec" style="padding-top:40px">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stats-grid">
+        <div class="stat"><div class="num" data-count="1000" data-suffix="+">0</div><div class="lbl">家庭加入</div></div>
+        <div class="stat"><div class="num" data-count="200" data-suffix="+">0</div><div class="lbl">精選專欄</div></div>
+        <div class="stat"><div class="num" data-count="500" data-suffix="+">0</div><div class="lbl">親子景點整理</div></div>
+        <div class="stat"><div class="num" data-count="50" data-suffix="+">0</div><div class="lbl">合作品牌</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>常見問題</h2><p>關於童序，你可能想知道的事。</p></div>
+    <div class="faq-wrap">
+      <details class="faq-item reveal d1" open><summary>加入童序需要付費嗎？<span class="pm">+</span></summary><div class="ans">完全免費。註冊即可瀏覽所有精選內容、親子資源分類與社群討論，並接收專屬活動優惠通知。</div></details>
+      <details class="faq-item reveal d1"><summary>童序上的活動資訊可靠嗎？<span class="pm">+</span></summary><div class="ans">所有活動與景點都由編輯團隊人工篩選整理，並結合家長的真實評價，確保你看到的都是值得信任的優質體驗。</div></details>
+      <details class="faq-item reveal d2"><summary>適合多大年齡的孩子？<span class="pm">+</span></summary><div class="ans">童序涵蓋 0–12 歲的親子活動與資源。你可以依孩子的年齡設定偏好，系統會自動推薦最合適的內容。</div></details>
+      <details class="faq-item reveal d2"><summary>我是店家或品牌，想合作怎麼辦？<span class="pm">+</span></summary><div class="ans">非常歡迎！請透過頁尾的「合作洽詢」與我們聯繫，童序團隊會協助你把優質的親子體驗帶給更多家庭。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" id="cta" style="padding-top:20px">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <span class="eyebrow">Join Tongxu</span>
+      <h2>加入童序，一起陪伴孩子探索世界。</h2>
+      <p>成為社群的一員，與上千個家庭分享美好、發現更多可能。現在加入完全免費。</p>
+      <div class="cta-btns">
+        <a href="#footer" class="btn">立即免費加入 →</a>
+        <a href="#featured" class="btn ghost">先看看內容</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand-col">
+        <div class="foot-brand"><img src="assets/logo.jpg" alt="童序">童序</div>
+        <p>陪伴每個家庭，探索孩子成長的每一步。一個值得信任、彼此分享的親子成長媒體社群。</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="LINE">L</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>關於</h4>
+        <a href="#about">品牌介紹</a>
+        <a href="#community">社群規範</a>
+        <a href="#cta">合作洽詢</a>
+        <a href="#footer">聯絡我們</a>
+      </div>
+      <div class="foot-col">
+        <h4>探索</h4>
+        <a href="#featured">精選專欄</a>
+        <a href="#resources">親子資源</a>
+        <a href="#experts">專家觀點</a>
+      </div>
+      <div class="foot-col foot-news">
+        <h4>訂閱童序週報</h4>
+        <p>每週精選親子活動與育兒好文，直接送到你的信箱。</p>
+        <form class="news-form" onsubmit="return false">
+          <input type="email" placeholder="輸入你的 Email" aria-label="Email">
+          <button type="submit">訂閱</button>
+        </form>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 童序 Tongxu. 用心陪伴每個家庭。All rights reserved.</span>
+      <span class="fl"><a href="#">隱私權政策</a><a href="#">使用條款</a><a href="#">合作洽詢</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.remove('no-js');
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),4000);
+function animate(el){const t=+el.dataset.count,suf=el.dataset.suffix||'',dur=1600,st=performance.now();
+  function step(now){let p=Math.min((now-st)/dur,1);p=1-Math.pow(1-p,3);el.textContent=Math.floor(p*t).toLocaleString()+suf;if(p<1)requestAnimationFrame(step)}
+  requestAnimationFrame(step)}
+const cio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){animate(e.target);cio.unobserve(e.target)}}),{threshold:.5});
+document.querySelectorAll('.num').forEach(n=>cio.observe(n));
+</script>
+</body>
+</html>
