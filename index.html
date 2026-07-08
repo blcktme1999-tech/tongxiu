@@ -296,6 +296,29 @@ section{position:relative}
   .feat-hero{min-height:340px}.feat-hero .body{padding:28px 24px}.feat-hero h3{font-size:1.4rem}
   .copy{flex-direction:column;text-align:center}
 }
+
+/* ---------- FLOATING ILLUSTRATION DECOR ---------- */
+.deco{position:absolute;pointer-events:none;z-index:0;opacity:.5;filter:saturate(1.02);will-change:transform;animation:decoFloat 11s var(--ease) infinite}
+.deco img{width:100%;height:auto;display:block}
+@keyframes decoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(-1.2deg)}}
+/* keep hero text above decor */
+.hero .wrap{position:relative;z-index:2}
+.hero-visual{position:relative;z-index:2}
+/* hero corner illustrations */
+.deco-hero-1{width:230px;left:-56px;bottom:26px;opacity:.42;animation-duration:13s}
+.deco-hero-2{width:190px;right:-40px;top:120px;opacity:.34;animation-duration:15s;animation-delay:-3s}
+/* about section */
+#about{position:relative;overflow:hidden}
+#about .wrap{position:relative;z-index:2}
+.deco-about{width:250px;right:-70px;top:-40px;opacity:.3;animation-duration:14s}
+/* cta banner floating illustrations (inside the green banner) */
+.cta-banner .eyebrow,.cta-banner h2,.cta-banner p,.cta-banner .cta-btns{z-index:2}
+.cta-banner .deco{opacity:.28;mix-blend-mode:luminosity}
+.deco-cta-1{width:210px;left:-58px;bottom:-46px;animation-duration:12s}
+.deco-cta-2{width:180px;right:-48px;top:-40px;animation-duration:14s;animation-delay:-4s}
+@media(max-width:900px){.deco-about,.deco-hero-2{display:none}}
+@media(max-width:640px){.deco{display:none}}
+@media(prefers-reduced-motion:reduce){.deco{animation:none}}
 </style>
 </head>
 <body>
@@ -322,6 +345,8 @@ section{position:relative}
 
 <!-- HERO -->
 <header class="hero" id="home">
+  <div class="deco deco-hero-1"><img src="assets/deco-science.png" alt="" aria-hidden="true"></div>
+  <div class="deco deco-hero-2"><img src="assets/deco-stay.png" alt="" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="reveal in">
       <div class="hero-rating">
@@ -364,6 +389,7 @@ section{position:relative}
 
 <!-- ABOUT / VALUE -->
 <section class="sec" id="about">
+  <div class="deco deco-about"><img src="assets/deco-logo.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">About Us</span><h2>關於童序</h2></div>
     <div class="about-lead reveal d1">
@@ -472,7 +498,7 @@ section{position:relative}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Our Community</span><h2>我們的社群</h2><p>童序不只是資訊平台，更是一個屬於家長的溫暖社群 —— 在這裡分享、討論、彼此陪伴，一起把育兒路走得更踏實。</p></div>
     <div class="comm-grid">
-      <div class="comm-card reveal d1"><div class="ic">🎈</div><h3>親子活動分享</h3><p>最新活動資訊、家長交流討論、育兒經驗分享與第一手優惠。</p></div>
+      <a class="comm-card reveal d1" href="activities.html" style="display:block;cursor:pointer"><div class="ic">🎈</div><h3>親子活動分享</h3><p>最新活動資訊、家長交流討論、育兒經驗分享與第一手優惠。</p></a>
       <div class="comm-card reveal d2"><div class="ic">🏷️</div><h3>優惠資訊</h3><p>合作品牌與活動的專屬優惠，家長不再錯過每一次好機會。</p></div>
       <div class="comm-card reveal d3"><div class="ic">🗺️</div><h3>親子景點</h3><p>博物館、公園、展覽 —— 精選最適合帶孩子探索的好去處。</p></div>
       <div class="comm-card reveal d4"><div class="ic">📚</div><h3>家庭成長</h3><p>陪伴孩子共同學習，讓每個家庭都能一起前進。</p></div>
@@ -523,6 +549,8 @@ section{position:relative}
 <section class="sec" id="cta" style="padding-top:20px">
   <div class="wrap">
     <div class="cta-banner reveal">
+      <div class="deco deco-cta-1"><img src="assets/deco-science.png" alt="" aria-hidden="true"></div>
+      <div class="deco deco-cta-2"><img src="assets/deco-stay.png" alt="" aria-hidden="true"></div>
       <span class="eyebrow">Join Tongxu</span>
       <h2>加入童序，一起陪伴孩子探索世界。</h2>
       <p>成為社群的一員，與上千個家庭分享美好、發現更多可能。現在加入完全免費。</p>
