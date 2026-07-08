@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>親子活動分享 · 童序 Tongxu</title>
+<meta name="description" content="童序精選親子活動分享，最新活動資訊、家長交流討論、育兒經驗分享與第一手優惠，讓每個家庭更輕鬆找到適合孩子的體驗。">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FCF9F3; --cream-2:#F6EFE3; --beige:#EFE4D2;
+  --ink:#33302A; --ink-soft:#635D53; --muted:#948C7E;
+  --line:rgba(51,48,42,.08);
+  --orange:#EE8F4E; --orange-2:#E87B36; --orange-soft:#F9C9A3; --orange-tint:#FCEBDD;
+  --green:#8DBE6E; --green-2:#79AB5B; --green-tint:#EDF4E3;
+  --blue:#6FAAD0; --blue-tint:#E6F0F7;
+  --pink:#F0A5B5; --pink-tint:#FCE7EC;
+  --white:#ffffff;
+  --radius:26px; --radius-sm:16px;
+  --shadow-xs:0 2px 8px rgba(96,80,55,.05);
+  --shadow-sm:0 4px 18px rgba(96,80,55,.07);
+  --shadow:0 18px 44px rgba(96,80,55,.11);
+  --maxw:1100px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--cream);line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:"Baloo 2","Noto Sans TC",sans-serif;letter-spacing:.01em;line-height:1.24}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* breadcrumb */
+.crumb{padding:22px 0 0}
+.crumb .wrap{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted)}
+.crumb a{color:var(--ink-soft);font-weight:500}
+.crumb a:hover{color:var(--orange-2)}
+
+/* header banner */
+.banner{padding:22px 0 44px;position:relative;overflow:hidden}
+.banner::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 8% 20%,var(--orange-tint) 0%,transparent 60%);z-index:-1}
+.banner-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.banner .icon-badge{width:56px;height:56px;border-radius:16px;background:var(--orange-tint);display:grid;place-items:center;font-size:1.7rem;margin-bottom:18px}
+.banner h1{font-size:clamp(2.1rem,4.4vw,3rem);font-weight:800;margin-bottom:16px}
+.banner h1 .hl{color:var(--orange-2)}
+.banner p{font-size:1.08rem;color:var(--ink-soft);max-width:440px}
+.banner-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3}
+.banner-photo img{width:100%;height:100%;object-fit:cover}
+
+/* section title */
+.sec{padding:12px 0 70px}
+.sec-flex{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:10px}
+.sec-flex h2{font-size:1.6rem;font-weight:800}
+.sec-flex a{font-family:"Baloo 2";font-weight:700;color:var(--orange-2);font-size:.95rem}
+
+/* activity cards */
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.act-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:.4s var(--ease)}
+.act-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.act-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.act-img img{width:100%;height:100%;object-fit:cover}
+.act-tag{position:absolute;top:12px;left:12px;font-family:"Baloo 2";font-weight:700;font-size:.72rem;color:#fff;padding:5px 12px;border-radius:999px}
+.tag-o{background:var(--orange)}.tag-g{background:var(--green-2)}.tag-b{background:var(--blue)}.tag-p{background:#D97A94}
+.act-body{padding:20px 22px 24px}
+.act-body h3{font-size:1.08rem;font-weight:700;margin-bottom:8px;line-height:1.4}
+.act-body .date{font-size:.82rem;color:var(--muted);margin-bottom:16px}
+.act-body .btn{display:inline-block;width:100%;text-align:center;font-family:"Baloo 2";font-weight:700;font-size:.92rem;padding:11px 0;border-radius:999px;background:var(--cream-2);color:var(--ink);transition:.3s var(--ease)}
+.act-card:hover .act-body .btn{background:var(--orange);color:#fff}
+
+/* line cta */
+.line-cta{background:var(--orange-tint);border-radius:var(--radius);padding:26px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:var(--shadow-xs)}
+.line-cta .txt{display:flex;align-items:center;gap:16px}
+.line-cta .mega{font-size:1.9rem}
+.line-cta h4{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.line-cta p{font-size:.9rem;color:var(--ink-soft)}
+.line-cta .btn{font-family:"Baloo 2";font-weight:700;font-size:.98rem;color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-2));padding:14px 30px;border-radius:999px;box-shadow:0 12px 26px rgba(238,143,78,.35);white-space:nowrap;transition:.3s var(--ease)}
+.line-cta .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(238,143,78,.45)}
+
+/* footer */
+.footer{background:var(--ink);color:#EDE7DC;padding:44px 0 26px;margin-top:20px}
+.footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-brand{display:flex;align-items:center;gap:10px;font-family:"Baloo 2";font-weight:800;font-size:1.1rem}
+.foot-brand img{width:34px;height:34px;border-radius:10px;object-fit:cover}
+.footer .copy{color:#8F887B;font-size:.85rem}
+.footer a.back{color:var(--orange-soft);font-size:.9rem;font-weight:600}
+
+@media(max-width:900px){
+  .banner-grid{grid-template-columns:1fr;gap:28px}
+  .act-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .act-grid{grid-template-columns:1fr}
+  .line-cta{flex-direction:column;text-align:center}
+  .line-cta .txt{flex-direction:column}
+  .line-cta .btn{width:100%}
+  .footer .wrap{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<div class="crumb"><div class="wrap"><a href="index.html">首頁</a><span>›</span><span>親子活動分享</span></div></div>
+
+<!-- BANNER -->
+<header class="banner">
+  <div class="wrap banner-grid">
+    <div>
+      <div class="icon-badge">🎈</div>
+      <h1><span class="hl">親子活動</span>分享</h1>
+      <p>最新活動資訊、家長交流討論、育兒經驗分享與第一手優惠，讓每個家庭都能輕鬆找到最適合孩子的體驗。</p>
+    </div>
+    <div class="banner-photo"><img src="assets/craft.png" alt="親子手作活動"></div>
+  </div>
+</header>
+
+<!-- ACTIVITIES -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-flex"><h2>最新活動</h2></div>
+    <div class="act-grid">
+      <div class="act-card">
+        <div class="act-img"><span class="act-tag tag-o">親子活動</span><img src="assets/craft.png" alt="手作體驗課程"></div>
+        <div class="act-body">
+          <h3>手作體驗課程　折扣優惠中！</h3>
+          <div class="date">即日起至 2026/08/31</div>
+          <a href="#" class="btn">查看詳情</a>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-img"><span class="act-tag tag-b">親子景點</span><img src="assets/museum.png" alt="親子博物館導覽"></div>
+        <div class="act-body">
+          <h3>親子博物館導覽　小家庭優惠票</h3>
+          <div class="date">即日起至 2026/08/31</div>
+          <a href="#" class="btn">查看詳情</a>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-img"><span class="act-tag tag-g">戶外探索</span><img src="assets/outdoor.png" alt="親子戶外探索營"></div>
+        <div class="act-body">
+          <h3>親子戶外探索營　早鳥報名 8 折</h3>
+          <div class="date">即日起至 2026/08/31</div>
+          <a href="#" class="btn">查看詳情</a>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-img"><span class="act-tag tag-p">科學探索</span><img src="assets/science.png" alt="親子科學實驗課"></div>
+        <div class="act-body">
+          <h3>親子科學實驗課　第二堂 8 折</h3>
+          <div class="date">即日起至 2026/08/31</div>
+          <a href="#" class="btn">查看詳情</a>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-img"><span class="act-tag tag-o">親子共讀</span><img src="assets/feature-reading.png" alt="親子共讀活動"></div>
+        <div class="act-body">
+          <h3>親子共讀活動　免費入場</h3>
+          <div class="date">即日起至 2026/08/31</div>
+          <a href="#" class="btn">查看詳情</a>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-img"><span class="act-tag tag-b">親子住宿</span><img src="assets/stay.png" alt="親子住宿專案"></div>
+        <div class="act-body">
+          <h3>親子住宿專案　平日享 85 折</h3>
+          <div class="date">即日起至 2026/08/31</div>
+          <a href="#" class="btn">查看詳情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINE CTA -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="line-cta">
+      <div class="txt">
+        <span class="mega">📣</span>
+        <div><h4>想收到最新活動訊息嗎？</h4><p>快加入我們的 LINE 社群，第一時間掌握專屬好康！</p></div>
+      </div>
+      <a href="https://line.me/" target="_blank" rel="noopener" class="btn">立即加入</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-brand"><img src="assets/logo.jpg" alt="童序">童序 Tongxu</div>
+    <span class="copy">© 2026 童序 Tongxu. 用心陪伴每個家庭。</span>
+    <a href="index.html" class="back">← 回到首頁</a>
+  </div>
+</footer>
+
+</body>
+</html>
