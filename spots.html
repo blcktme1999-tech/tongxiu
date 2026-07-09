@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>親子玩水景點・2026 夏季精選 · 童序 Tongxu</title>
+<meta name="description" content="童序精選 5 個雙北親子玩水景點：臺北自來水園區、陽光運動公園、重陽花漾水樂園、十四張歷史公園、新北大都會公園，附開放時間、票價與交通資訊。">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FCF9F3; --cream-2:#F6EFE3; --beige:#EFE4D2;
+  --ink:#33302A; --ink-soft:#635D53; --muted:#948C7E;
+  --line:rgba(51,48,42,.10);
+  --orange:#EE8F4E; --orange-2:#E87B36; --orange-soft:#F9C9A3; --orange-tint:#FCEBDD;
+  --green:#8DBE6E; --green-2:#79AB5B; --green-tint:#EDF4E3;
+  --blue:#6FAAD0; --blue-2:#4E8FBC; --blue-tint:#E6F0F7;
+  --pink:#F0A5B5; --pink-tint:#FCE7EC;
+  --white:#ffffff;
+  --radius:26px; --radius-sm:16px;
+  --maxw:1000px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Baloo 2","Noto Sans TC",sans-serif;line-height:1.3}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* top bar */
+.topbar{border-bottom:1px solid var(--line);background:rgba(252,249,243,.9);position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.tb-brand{display:flex;align-items:center;gap:10px;font-family:"Baloo 2";font-weight:800;font-size:1.12rem}
+.tb-brand img{width:34px;height:34px;border-radius:10px;object-fit:cover}
+.tb-back{font-size:.9rem;font-weight:600;color:var(--ink-soft)}
+.tb-back:hover{color:var(--orange-2)}
+
+/* breadcrumb */
+.crumb{padding:20px 0 0}
+.crumb .wrap{display:flex;align-items:center;gap:8px;font-size:.86rem;color:var(--muted);flex-wrap:wrap}
+.crumb a{color:var(--ink-soft);font-weight:500}
+.crumb a:hover{color:var(--orange-2)}
+
+/* banner */
+.banner{padding:26px 0 40px;text-align:center;position:relative;overflow:hidden}
+.banner::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 0%,var(--blue-tint) 0%,transparent 62%);z-index:-1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"Baloo 2";font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-2);background:var(--blue-tint);padding:7px 16px;border-radius:999px;margin-bottom:18px}
+.banner h1{font-size:clamp(2rem,4.6vw,3rem);font-weight:800;margin-bottom:14px}
+.banner h1 .hl{color:var(--blue-2)}
+.banner .lead{font-size:1.08rem;color:var(--ink-soft);max-width:620px;margin:0 auto}
+
+/* spot list */
+.spots{padding:20px 0 60px;display:flex;flex-direction:column;gap:30px}
+.spot{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.spot-head{display:flex;align-items:center;gap:18px;padding:26px 30px 20px}
+.spot-num{flex:0 0 auto;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-family:"Baloo 2";font-weight:800;font-size:1.5rem;color:#fff}
+.spot:nth-child(1) .spot-num{background:linear-gradient(135deg,var(--blue),var(--blue-2))}
+.spot:nth-child(2) .spot-num{background:linear-gradient(135deg,var(--green),var(--green-2))}
+.spot:nth-child(3) .spot-num{background:linear-gradient(135deg,var(--pink),#D97A94)}
+.spot:nth-child(4) .spot-num{background:linear-gradient(135deg,var(--orange),var(--orange-2))}
+.spot:nth-child(5) .spot-num{background:linear-gradient(135deg,#7CC5D6,var(--blue-2))}
+.spot-title h2{font-size:1.35rem;font-weight:800;margin-bottom:2px}
+.spot-title .free{display:inline-block;font-family:"Baloo 2";font-weight:700;font-size:.74rem;color:var(--green-2);background:var(--green-tint);padding:3px 11px;border-radius:999px;margin-top:4px}
+.spot-title .paid{color:var(--orange-2);background:var(--orange-tint)}
+.spot-body{padding:0 30px 8px}
+.spot-body>p{color:var(--ink-soft);font-size:1rem;margin-bottom:6px}
+.spot-body .note{background:var(--blue-tint);border-radius:12px;padding:12px 16px;font-size:.92rem;color:var(--ink-soft);margin:12px 0}
+.info{display:grid;grid-template-columns:repeat(2,1fr);gap:2px 24px;padding:16px 30px 24px;border-top:1px dashed var(--line);margin-top:14px}
+.info .row{display:flex;gap:10px;padding:7px 0;font-size:.94rem;align-items:flex-start}
+.info .row .k{flex:0 0 auto;font-weight:700;color:var(--ink);min-width:66px}
+.info .row .v{color:var(--ink-soft)}
+.info .row.full{grid-column:1 / -1}
+.info .v a{color:var(--blue-2);font-weight:600;border-bottom:1px solid rgba(78,143,188,.35)}
+.mrt{display:inline-flex;align-items:center;gap:6px;font-weight:700}
+.mrt .dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+.mrt .green{background:#54a052}.mrt .orange{background:#e88b2f}.mrt .brown{background:#9a6b3f}
+
+/* cta */
+.cta{background:var(--orange-tint);border-radius:var(--radius);padding:26px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.cta .txt{display:flex;align-items:center;gap:16px}
+.cta .mega{font-size:1.9rem}
+.cta h4{font-size:1.05rem;font-weight:700;margin-bottom:3px}
+.cta p{font-size:.9rem;color:var(--ink-soft)}
+.cta .btn{font-family:"Baloo 2";font-weight:700;font-size:.98rem;color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-2));padding:13px 28px;border-radius:999px;white-space:nowrap}
+
+/* footer */
+.footer{background:var(--ink);color:#EDE7DC;padding:40px 0 26px}
+.footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-brand{display:flex;align-items:center;gap:10px;font-family:"Baloo 2";font-weight:800;font-size:1.1rem}
+.foot-brand img{width:34px;height:34px;border-radius:10px;object-fit:cover}
+.footer .copy{color:#8F887B;font-size:.84rem}
+.footer a.back{color:var(--orange-soft);font-size:.9rem;font-weight:600}
+.disclaimer{max-width:var(--maxw);margin:0 auto;padding:0 24px 40px;color:var(--muted);font-size:.8rem;line-height:1.7}
+
+@media(max-width:640px){
+  .info{grid-template-columns:1fr}
+  .spot-head{flex-wrap:wrap;gap:12px;padding:22px 22px 16px}
+  .spot-body,.info{padding-left:22px;padding-right:22px}
+  .cta{flex-direction:column;text-align:center}
+  .cta .txt{flex-direction:column}
+  .footer .wrap{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="tb-brand" href="index.html"><img src="assets/logo.jpg" alt="童序 logo"><span>童序 Tongxu</span></a>
+    <a class="tb-back" href="index.html">← 回首頁</a>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="crumb"><div class="wrap"><a href="index.html">首頁</a><span>›</span><a href="index.html#community">親子景點</a><span>›</span><span>親子玩水景點</span></div></div>
+
+<!-- BANNER -->
+<header class="banner">
+  <div class="wrap">
+    <span class="eyebrow">Summer Water Fun · 2026</span>
+    <h1>雙北<span class="hl">親子玩水</span>景點精選</h1>
+    <p class="lead">炎炎夏日，帶孩子清涼一下！童序整理 5 個雙北人氣玩水去處，附上開放時間、票價與交通資訊，出門前先收藏起來。</p>
+  </div>
+</header>
+
+<!-- SPOTS -->
+<section class="wrap">
+  <div class="spots">
+
+    <!-- 1 -->
+    <article class="spot">
+      <div class="spot-head">
+        <div class="spot-num">1</div>
+        <div class="spot-title"><h2>臺北自來水園區</h2><span class="free paid">需門票</span></div>
+      </div>
+      <div class="spot-body">
+        <p>距離捷運公館站步行不到 10 分鐘，是市區內非常方便的玩水地點。除了夏季開放的「水鄉庭園」，還能帶孩子參觀自來水博物館，學習水資源與環保知識。鄰近水源市場的「親水樂園」有超人氣大型滑水道與各式戲水設施。</p>
+        <div class="note">🎟️ 2026 暑假優惠：持臺北市立兒童新樂園「PILIGILI 水樂園」票根，至自來水園區「臺北親水節」購票享 <b>8 折</b>。</div>
+      </div>
+      <div class="info">
+        <div class="row"><span class="k">營業時間</span><span class="v">夏季(7-8月) 二～日 09:00–18:00；非夏季 09:00–17:00。週一休園（連假照常）。</span></div>
+        <div class="row"><span class="k">水鄉庭園</span><span class="v">夏季 7–8 月開放</span></div>
+        <div class="row"><span class="k">園區門票</span><span class="v">夏季 全票 80 / 優待 40；非夏季 全票 50 / 優待 25（含自來水博物館+水鄉庭園）</span></div>
+        <div class="row"><span class="k">親水樂園</span><span class="v">全票 平日160/假日180；學生 平日130/假日160；優待 平日80/假日90；未滿3歲免票</span></div>
+        <div class="row full"><span class="k">地址</span><span class="v">台北市中正區思源街 1 號 · <a href="#" target="_blank" rel="noopener">Google Map</a></span></div>
+        <div class="row full"><span class="k">捷運</span><span class="v"><span class="mrt"><span class="dot green"></span>綠線 公館站</span></span></div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="spot">
+      <div class="spot-head">
+        <div class="spot-num">2</div>
+        <div class="spot-title"><h2>陽光運動公園</h2><span class="free">免費</span></div>
+      </div>
+      <div class="spot-body">
+        <p>陽光遊戲場提供 9 種多樣化的親水設施，園區內還有鞦韆、爬網、吊橋、溜滑梯，適合長時間的親子活動。公園遮陰處較少，記得多帶防曬用具。</p>
+      </div>
+      <div class="info">
+        <div class="row"><span class="k">開放時間</span><span class="v">2026 年 7–8 月每日 10:00–12:00 / 15:00–17:00（週二固定休園維護）</span></div>
+        <div class="row"><span class="k">費用</span><span class="v">免費</span></div>
+        <div class="row full"><span class="k">地址</span><span class="v">新北市新店區安業街 · <a href="#" target="_blank" rel="noopener">Google Map</a></span></div>
+        <div class="row full"><span class="k">捷運</span><span class="v"><span class="mrt"><span class="dot green"></span>綠線 小碧潭站</span></span></div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="spot">
+      <div class="spot-head">
+        <div class="spot-num">3</div>
+        <div class="spot-title"><h2>重陽花漾水樂園</h2><span class="free">免費</span></div>
+      </div>
+      <div class="spot-body">
+        <p>2025 年新建，以花朵造型噴水設施與繽紛地景打造充滿童趣的戲水空間，是夏季親子消暑的熱門去處。鄰近重陽橋、新北大都會公園，可搭配熊猴森樂園、幸福水漾園區與自行車道，安排一整天放電行程。</p>
+      </div>
+      <div class="info">
+        <div class="row"><span class="k">開放時間</span><span class="v">2026 年 7、8 月暑假每日開放（週二休園維護）；9 月為例假日及國定假日開放</span></div>
+        <div class="row"><span class="k">噴水時間</span><span class="v">10:00–12:00、15:00–19:00</span></div>
+        <div class="row"><span class="k">費用</span><span class="v">免費</span></div>
+        <div class="row full"><span class="k">地址</span><span class="v">新北市三重區 · <a href="#" target="_blank" rel="noopener">Google Map</a></span></div>
+        <div class="row full"><span class="k">捷運</span><span class="v"><span class="mrt"><span class="dot orange"></span>橘線 三和國中站</span></span></div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="spot">
+      <div class="spot-head">
+        <div class="spot-num">4</div>
+        <div class="spot-title"><h2>十四張歷史公園</h2><span class="free">免費</span></div>
+      </div>
+      <div class="spot-body">
+        <p>以農村歷史為主題的特色遊戲場，穀倉造型遊戲塔結合溜滑梯、沙坑與爬網。水圳遊戲區規劃了水桶瀑布區與水圳道，兼具刺激與趣味。</p>
+      </div>
+      <div class="info">
+        <div class="row"><span class="k">開放時間</span><span class="v">週一至週五 16:30–18:30；週六日 10:30–11:30、15:00–18:30。每半小時噴水一次，每次約 15 分鐘。</span></div>
+        <div class="row"><span class="k">費用</span><span class="v">免費</span></div>
+        <div class="row full"><span class="k">地址</span><span class="v">新北市新店區央北二路與啟文路交叉口 · <a href="#" target="_blank" rel="noopener">Google Map</a></span></div>
+        <div class="row full"><span class="k">捷運</span><span class="v"><span class="mrt"><span class="dot brown"></span>環狀線＆安坑輕軌 十四張站（步行約 10 分鐘）</span></span></div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="spot">
+      <div class="spot-head">
+        <div class="spot-num">5</div>
+        <div class="spot-title"><h2>新北大都會公園（熊猴森海世界水樂園）</h2><span class="free">免費</span></div>
+      </div>
+      <div class="spot-body">
+        <p>以台灣水中生物為主題，設有彈塗魚、寄居蟹、花園鰻等造型的親水設施。公園腹地廣大，還有許多滑梯與遊具，非常適合帶孩子玩上一整天！</p>
+      </div>
+      <div class="info">
+        <div class="row"><span class="k">開放時間</span><span class="v">2026 年 7、8 月暑假每日開放（週二休園維護）；9 月為例假日及國定假日開放</span></div>
+        <div class="row"><span class="k">噴水時間</span><span class="v">10:00–12:00、15:00–19:00</span></div>
+        <div class="row"><span class="k">費用</span><span class="v">免費</span></div>
+        <div class="row full"><span class="k">地址</span><span class="v">新北市三重區水漾路一段 · <a href="#" target="_blank" rel="noopener">Google Map</a></span></div>
+        <div class="row full"><span class="k">捷運</span><span class="v"><span class="mrt"><span class="dot orange"></span>橘線 三重站</span></span></div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="txt">
+      <span class="mega">📣</span>
+      <div><h4>想收到更多親子景點與活動情報？</h4><p>加入童序 LINE 社群，第一手掌握夏季玩水攻略與優惠！</p></div>
+    </div>
+    <a href="https://line.me/" target="_blank" rel="noopener" class="btn">立即加入</a>
+  </div>
+</section>
+
+<p class="disclaimer">※ 以上開放時間、票價與優惠資訊為 2026 年整理，實際內容以各園區官方公告為準，出發前請再次確認。景點圖片版權屬各官方網站所有。</p>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-brand"><img src="assets/logo.jpg" alt="童序">童序 Tongxu</div>
+    <span class="copy">© 2026 童序 Tongxu. 用心陪伴每個家庭。</span>
+    <a href="index.html" class="back">← 回到首頁</a>
+  </div>
+</footer>
+
+</body>
+</html>
