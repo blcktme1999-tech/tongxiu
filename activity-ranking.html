@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>童序 Tongxu · 本月活動查看排行</title>
+<meta name="description" content="童序本月親子活動查看排行，整理北部、中部、南部、東部精選活動日期與地點。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FCF9F3;--cream-2:#F6EFE3;--ink:#33302A;--ink-soft:#635D53;--muted:#948C7E;--line:rgba(51,48,42,.1);--orange:#EE8F4E;--orange-2:#E87B36;--orange-tint:#FCEBDD;--green:#8DBE6E;--green-tint:#EDF4E3;--blue:#6FAAD0;--blue-tint:#E6F0F7;--pink:#F0A5B5;--pink-tint:#FCE7EC;--plum:#8C6FA6;--plum-tint:#EFE8F4;--white:#fff;--shadow:0 18px 44px rgba(96,80,55,.1);--radius:26px;--radius-lg:38px;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:"Noto Sans TC",sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;letter-spacing:.01em}a{color:inherit;text-decoration:none}.wrap{max-width:1160px;margin:0 auto;padding:0 24px}.nav{position:sticky;top:16px;z-index:10;margin:16px auto 0;width:calc(100% - 32px);max-width:1160px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px 10px 20px;border:1px solid rgba(255,255,255,.8);border-radius:999px;background:rgba(252,249,243,.82);backdrop-filter:blur(18px);box-shadow:var(--shadow)}.brand{font-family:"Baloo 2";font-weight:800;font-size:1.25rem;display:flex;align-items:center;gap:10px}.brand-mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--orange),var(--green));display:grid;place-items:center;color:#fff}.nav-actions{display:flex;gap:10px;align-items:center}.pill{font-weight:700;border-radius:999px;padding:10px 18px;background:#fff;border:1px solid var(--line);color:var(--ink-soft)}.pill.primary{background:var(--orange);color:#fff;border-color:var(--orange)}
+.hero{position:relative;overflow:hidden;padding:86px 0 50px}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(48% 58% at 12% 12%,var(--green-tint),transparent 62%),radial-gradient(48% 58% at 92% 8%,var(--blue-tint),transparent 62%),radial-gradient(58% 55% at 80% 94%,var(--orange-tint),transparent 65%);z-index:-1}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"Baloo 2";font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-2);background:var(--orange-tint);border-radius:999px;padding:7px 15px;margin-bottom:18px}.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}h1{font-family:"Baloo 2","Noto Sans TC";font-size:clamp(2.35rem,5.3vw,4.6rem);line-height:1.12;margin-bottom:18px}.hero p{font-size:1.1rem;color:var(--ink-soft);max-width:620px}.hero-card{background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.95);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}.rank-stat{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px}.stat b{display:block;font-family:"Baloo 2";font-size:2.25rem;line-height:1;color:var(--orange-2)}.stat span{display:block;margin-top:8px;color:var(--muted);font-weight:600}.toolbar{padding:26px 0 10px}.search-box{display:grid;grid-template-columns:1fr auto;gap:12px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:10px;box-shadow:var(--shadow)}.search-box input{border:0;outline:0;background:transparent;font:inherit;padding:12px 14px;color:var(--ink)}.search-box button{border:0;border-radius:18px;background:var(--orange);color:#fff;font-weight:800;padding:0 22px;cursor:pointer}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.tab{border:1px solid var(--line);background:#fff;color:var(--ink-soft);font-weight:800;border-radius:999px;padding:10px 18px;cursor:pointer}.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}.section{padding:30px 0}.region{margin-bottom:34px}.region-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:18px}.region h2{font-family:"Baloo 2","Noto Sans TC";font-size:2rem}.region small{color:var(--muted);font-weight:700}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.event-card{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 8px 24px rgba(96,80,55,.05);transition:.25s var(--ease)}.event-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.event-card:after{content:"";position:absolute;right:-28px;top:-28px;width:86px;height:86px;border-radius:50%;opacity:.55}.event-card.north:after{background:var(--orange-tint)}.event-card.central:after{background:var(--green-tint)}.event-card.south:after{background:var(--pink-tint)}.event-card.east:after{background:var(--blue-tint)}.rank{font-family:"Baloo 2";font-weight:800;color:var(--orange-2);font-size:.92rem;letter-spacing:.06em;margin-bottom:10px}.event-card h3{font-size:1.12rem;line-height:1.45;margin-bottom:16px;position:relative}.meta{display:flex;flex-direction:column;gap:8px;color:var(--ink-soft);font-weight:600}.meta span{display:flex;gap:8px;align-items:flex-start}.empty{display:none;background:#fff;border:1px dashed var(--line);border-radius:24px;padding:34px;text-align:center;color:var(--muted);font-weight:700}.footer{padding:54px 0;color:var(--muted);text-align:center}.hide{display:none!important}@media(max-width:920px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.nav{position:relative;top:auto}.nav-actions{display:none}}@media(max-width:620px){.hero{padding-top:54px}.cards{grid-template-columns:1fr}.rank-stat{grid-template-columns:1fr}.search-box{grid-template-columns:1fr}.search-box button{padding:12px}.region-head{display:block}.pill{padding:9px 13px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="tongxu-home-four-cards.html"><span class="brand-mark">童</span><span>童序 Tongxu</span></a>
+  <div class="nav-actions"><a class="pill" href="tongxu-home-four-cards.html">回首頁</a><a class="pill primary" href="#ranking">查看排行</a></div>
+</nav>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div><span class="eyebrow">Monthly Ranking</span><h1>本月親子活動<br>查看排行</h1><p>依北部、中部、南部、東部整理本月適合親子同行的展覽、藝術節、戲劇與戶外活動。可直接搜尋活動名稱、日期、地點或切換分區。</p></div>
+    <div class="hero-card">
+      <div class="rank-stat"><div class="stat"><b>45</b><span>精選活動</span></div><div class="stat"><b>4</b><span>分區整理</span></div><div class="stat"><b>7-10月</b><span>活動檔期</span></div><div class="stat"><b>TOP</b><span>快速查看</span></div></div>
+    </div>
+  </div>
+</header>
+<main id="ranking">
+  <div class="wrap toolbar">
+    <div class="search-box"><input id="searchInput" type="search" placeholder="搜尋活動、地點、日期，例如：華山、熱氣球、7/18" aria-label="搜尋活動"><button type="button" id="clearBtn">清除</button></div>
+    <div class="tabs" aria-label="分區篩選">
+      <button class="tab active" data-region="all">全部</button><button class="tab" data-region="north">北部</button><button class="tab" data-region="central">中部</button><button class="tab" data-region="south">南部</button><button class="tab" data-region="east">東部</button>
+    </div>
+  </div>
+  <div class="wrap section">
+    <div class="empty" id="emptyState">目前沒有符合搜尋的活動，請換個關鍵字試試。</div>
+    <section class="region" data-region="north"><div class="region-head"><div><span class="eyebrow">North</span><h2>北部</h2></div><small>雙北、桃園、新竹、基隆</small></div><div class="cards">
+      <article class="event-card north"><div class="rank">#01</div><h3>《阿甯咕這一家》親子劇</h3><div class="meta"><span>📅 7/18－7/19</span><span>📍 國家兩廳院</span></div></article>
+      <article class="event-card north"><div class="rank">#02</div><h3>童心電影院 × 台灣國際兒童影展</h3><div class="meta"><span>📅 7/5－7/25</span><span>📍 國家電影及視聽文化中心</span></div></article>
+      <article class="event-card north"><div class="rank">#03</div><h3>櫻桃小丸子原作40週年特展</h3><div class="meta"><span>📅 6/18－9/28</span><span>📍 松山文創園區</span></div></article>
+      <article class="event-card north"><div class="rank">#04</div><h3>波隆那世界插畫大獎展</h3><div class="meta"><span>📅 7/4－9/28</span><span>📍 華山1914</span></div></article>
+      <article class="event-card north"><div class="rank">#05</div><h3>CHIIKAWA DAYS 台北特展</h3><div class="meta"><span>📅 7/4－9/27</span><span>📍 華山1914</span></div></article>
+      <article class="event-card north"><div class="rank">#06</div><h3>建築光雕暨聲光環境劇場－海山夜行</h3><div class="meta"><span>📅 6/20－7/12</span><span>📍 新北市美術館</span></div></article>
+      <article class="event-card north"><div class="rank">#07</div><h3>新北市兒童藝術節</h3><div class="meta"><span>📅 7/11－7/19</span><span>📍 新北市市民廣場</span></div></article>
+      <article class="event-card north"><div class="rank">#08</div><h3>PEANUTS 夏日海灘祭</h3><div class="meta"><span>📅 6/18－9/14</span><span>📍 華山1914</span></div></article>
+      <article class="event-card north"><div class="rank">#09</div><h3>Anime Max Festival 動漫最高祭</h3><div class="meta"><span>📅 6/18－9/13</span><span>📍 華山1914</span></div></article>
+      <article class="event-card north"><div class="rank">#10</div><h3>福隆國際沙雕藝術季</h3><div class="meta"><span>📅 即日起－10/26</span><span>📍 福隆海水浴場</span></div></article>
+      <article class="event-card north"><div class="rank">#11</div><h3>桃園兒童藝術節</h3><div class="meta"><span>📅 7/4－7/26</span><span>📍 桃園</span></div></article>
+      <article class="event-card north"><div class="rank">#12</div><h3>鐵道藝術村－精靈在哪裡</h3><div class="meta"><span>📅 即日起－7/19</span><span>📍 新竹鐵道藝術村</span></div></article>
+      <article class="event-card north"><div class="rank">#13</div><h3>夏季水漾月</h3><div class="meta"><span>📅 7/4－7/5</span><span>📍 青草湖風景區</span></div></article>
+      <article class="event-card north"><div class="rank">#14</div><h3>風城藝術節</h3><div class="meta"><span>📅 7/4－8/15</span><span>📍 新竹市區</span></div></article>
+      <article class="event-card north"><div class="rank">#15</div><h3>基隆鎖管季－手作一夜干體驗</h3><div class="meta"><span>📅 7/4－7/25</span><span>📍 基隆</span></div></article>
+    </div></section>
+    <section class="region" data-region="central"><div class="region-head"><div><span class="eyebrow">Central</span><h2>中部</h2></div><small>台中、彰化、苗栗、南投、雲林</small></div><div class="cards">
+      <article class="event-card central"><div class="rank">#01</div><h3>《阿公的跟屁蟲》合唱劇場</h3><div class="meta"><span>📅 7/31</span><span>📍 臺中國家歌劇院</span></div></article>
+      <article class="event-card central"><div class="rank">#02</div><h3>小小自然探險家</h3><div class="meta"><span>📅 7/4－8/29</span><span>📍 大里藝術廣場</span></div></article>
+      <article class="event-card central"><div class="rank">#03</div><h3>異起樂翻天</h3><div class="meta"><span>📅 7/1－8/31</span><span>📍 大里藝術廣場</span></div></article>
+      <article class="event-card central"><div class="rank">#04</div><h3>台中翻轉動漫祭</h3><div class="meta"><span>📅 6/26－7/13</span><span>📍 中友百貨</span></div></article>
+      <article class="event-card central"><div class="rank">#05</div><h3>《魔女宅急便》音樂劇</h3><div class="meta"><span>📅 7/24－8/2</span><span>📍 臺中國家歌劇院</span></div></article>
+      <article class="event-card central"><div class="rank">#06</div><h3>台秋祭</h3><div class="meta"><span>📅 7/18－7/19</span><span>📍 台中驛鐵道文化園區</span></div></article>
+      <article class="event-card central"><div class="rank">#07</div><h3>通霄沙雕藝術節</h3><div class="meta"><span>📅 7/4－9/6</span><span>📍 苗栗通霄海水浴場</span></div></article>
+      <article class="event-card central"><div class="rank">#08</div><h3>貓裏表演藝術節</h3><div class="meta"><span>📅 即日起－8/30</span><span>📍 苗栗中正堂演藝廳</span></div></article>
+      <article class="event-card central"><div class="rank">#09</div><h3>南投 Hakka 嘉年華</h3><div class="meta"><span>📅 7/11</span><span>📍 中興新村</span></div></article>
+      <article class="event-card central"><div class="rank">#10</div><h3>雲西海洋音樂季</h3><div class="meta"><span>📅 7/25－7/26</span><span>📍 三條崙海水浴場</span></div></article>
+      <article class="event-card central"><div class="rank">#11</div><h3>彰化兒童藝術節</h3><div class="meta"><span>📅 7/19－8/9</span><span>📍 彰化</span></div></article>
+      <article class="event-card central"><div class="rank">#12</div><h3>彰濱海 FUN 一夏－慶安水樂園</h3><div class="meta"><span>📅 7/4－8/2</span><span>📍 彰化自然教育中心</span></div></article>
+    </div></section>
+    <section class="region" data-region="south"><div class="region-head"><div><span class="eyebrow">South</span><h2>南部</h2></div><small>嘉義、台南、高雄、屏東</small></div><div class="cards">
+      <article class="event-card south"><div class="rank">#01</div><h3>東石海之夏</h3><div class="meta"><span>📅 7/18－7/26</span><span>📍 嘉義東石漁人碼頭</span></div></article>
+      <article class="event-card south"><div class="rank">#02</div><h3>南宮學院－校慶大作戰（實境解謎）</h3><div class="meta"><span>📅 即日起－11/15</span><span>📍 故宮南院</span></div></article>
+      <article class="event-card south"><div class="rank">#03</div><h3>臺南國際芒果節</h3><div class="meta"><span>📅 6/27－7/12</span><span>📍 臺南</span></div></article>
+      <article class="event-card south"><div class="rank">#04</div><h3>巧虎大型舞台劇－銀河怪盜的祕密</h3><div class="meta"><span>📅 7/11</span><span>📍 臺南文化中心</span></div></article>
+      <article class="event-card south"><div class="rank">#05</div><h3>花露露的童樂節</h3><div class="meta"><span>📅 7/4－7/19</span><span>📍 衛武營國家藝術中心</span></div></article>
+      <article class="event-card south"><div class="rank">#06</div><h3>巧虎大型舞台劇</h3><div class="meta"><span>📅 7/4－7/5</span><span>📍 衛武營國家藝術中心</span></div></article>
+      <article class="event-card south"><div class="rank">#07</div><h3>義大極地夢幻水世界</h3><div class="meta"><span>📅 7/4－8/30</span><span>📍 義大世界</span></div></article>
+      <article class="event-card south"><div class="rank">#08</div><h3>大港閱冰</h3><div class="meta"><span>📅 7/18－7/19</span><span>📍 高雄哈瑪星</span></div></article>
+      <article class="event-card south"><div class="rank">#09</div><h3>蠟筆小新－玩轉！時空大冒險互動展</h3><div class="meta"><span>📅 7/4－10/11</span><span>📍 屏東縣民公園</span></div></article>
+      <article class="event-card south"><div class="rank">#10</div><h3>屏東夏日狂歡祭</h3><div class="meta"><span>📅 7/4－8/30</span><span>📍 屏東縣民公園</span></div></article>
+    </div></section>
+    <section class="region" data-region="east"><div class="region-head"><div><span class="eyebrow">East</span><h2>東部</h2></div><small>宜蘭、花蓮、台東</small></div><div class="cards">
+      <article class="event-card east"><div class="rank">#01</div><h3>壯圍沙丘藝術節－星夜沙丘音樂會</h3><div class="meta"><span>📅 7/18－8/16</span><span>📍 宜蘭壯圍沙丘</span></div></article>
+      <article class="event-card east"><div class="rank">#02</div><h3>宜蘭國際童玩藝術節</h3><div class="meta"><span>📅 7/4－8/16</span><span>📍 冬山河親水公園</span></div></article>
+      <article class="event-card east"><div class="rank">#03</div><h3>蘭陽星空賞螢季</h3><div class="meta"><span>📅 7/1－8/31</span><span>📍 宜蘭</span></div></article>
+      <article class="event-card east"><div class="rank">#04</div><h3>花蓮夏戀嘉年華</h3><div class="meta"><span>📅 7/1－7/5</span><span>📍 花蓮東大門</span></div></article>
+      <article class="event-card east"><div class="rank">#05</div><h3>花蓮 FUN 暑假 × 航海王</h3><div class="meta"><span>📅 7/11－8/16</span><span>📍 花蓮鯉魚潭</span></div></article>
+      <article class="event-card east"><div class="rank">#06</div><h3>臺灣國際熱氣球嘉年華</h3><div class="meta"><span>📅 7/4－8/20</span><span>📍 台東鹿野高台</span></div></article>
+      <article class="event-card east"><div class="rank">#07</div><h3>熱氣球光雕音樂會</h3><div class="meta"><span>📅 7/5－8/20</span><span>📍 台東鹿野高台</span></div></article>
+      <article class="event-card east"><div class="rank">#08</div><h3>台東博覽會</h3><div class="meta"><span>📅 7/3－8/20</span><span>📍 台東市</span></div></article>
+    </div></section>
+  </div>
+</main>
+<footer class="footer"><div class="wrap">童序 Tongxu · 本月活動查看排行</div></footer>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+const regions=[...document.querySelectorAll('.region')];
+const cards=[...document.querySelectorAll('.event-card')];
+const input=document.getElementById('searchInput');
+const empty=document.getElementById('emptyState');
+let active='all';
+function applyFilter(){
+  const q=input.value.trim().toLowerCase();
+  let shown=0;
+  regions.forEach(region=>{
+    const regionName=region.dataset.region;
+    const regionMatches=active==='all'||active===regionName;
+    let regionShown=0;
+    region.querySelectorAll('.event-card').forEach(card=>{
+      const okRegion=regionMatches;
+      const okText=!q||card.innerText.toLowerCase().includes(q);
+      const show=okRegion&&okText;
+      card.classList.toggle('hide',!show);
+      if(show){shown++;regionShown++;}
+    });
+    region.classList.toggle('hide',!regionMatches||regionShown===0);
+  });
+  empty.style.display=shown?'none':'block';
+}
+tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');active=tab.dataset.region;applyFilter();}));
+input.addEventListener('input',applyFilter);
+document.getElementById('clearBtn').addEventListener('click',()=>{input.value='';active='all';tabs.forEach(t=>t.classList.toggle('active',t.dataset.region==='all'));applyFilter();input.focus();});
+applyFilter();
+</script>
+</body>
+</html>
