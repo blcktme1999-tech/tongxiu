@@ -108,7 +108,7 @@ a{color:inherit;text-decoration:none}
 .search-results.open{display:grid;gap:6px}
 .search-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:var(--cream);color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:.2s var(--ease)}
 .search-option:hover{background:var(--green-tint);color:#4f7e34}
-.search-option small{color:var(--muted);font-size:.75rem;white-space:nowrap}
+.search-option small{color:var(--muted);font-size:.75rem;white-space:nowrap}.search-option .result-title{display:block;font-weight:700}.search-option .result-url{display:block;color:var(--muted);font-size:.72rem;line-height:1.35;margin-top:2px}
 .search-empty{padding:10px 12px;color:var(--muted);font-size:.84rem}
 .tool-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tool-tags span{background:var(--green-tint);color:#5D8C3F;font-weight:700;font-size:.78rem;padding:5px 11px;border-radius:999px}
 .tool-link{font-weight:800;color:#B66A2E;font-size:.92rem;position:relative;z-index:2}.tool-ill{position:absolute;right:18px;bottom:14px;font-size:3.7rem;opacity:.88;line-height:1}.tool-chart{position:absolute;right:20px;bottom:22px;width:92px;height:74px}.tool-chart svg{width:100%;height:100%;overflow:visible}.tool-note{font-weight:700;font-size:.92rem;color:var(--ink-soft);position:relative;z-index:2}
@@ -650,17 +650,48 @@ const quickSearchForm=document.getElementById('quickSearchForm');
 const quickSearchInput=document.getElementById('quickSearchInput');
 const quickSearchResults=document.getElementById('quickSearchResults');
 const quickSearchItems=[
-  {title:'親子景點 TOP10',type:'景點',keywords:'親子景點 熱門景點 top 排行 博物館 公園 展覽',url:'spots.html'},
-  {title:'本月親子活動',type:'活動',keywords:'本月活動 暑假活動 親子活動 優惠 分享 0-3歲 幼兒',url:'activities.html'},
-  {title:'熱門活動排行',type:'排行',keywords:'活動排行 熱門景點 排名 推薦',url:'activity-ranking.html'},
-  {title:'專家育兒觀點',type:'文章',keywords:'專家 文章 育兒 教育 心理 親職',url:'#experts'},
-  {title:'社群交流與優惠',type:'社群',keywords:'社群 家長 交流 優惠 分享',url:'#community'}
+  {
+    "title": "本月親子活動",
+    "type": "活動",
+    "keywords": "親子活動分享 · 童序 Tongxu 童序親子活動分享 — 陪伴孩子，一起探索每一個成長時刻。匯集各式親子活動、育兒資訊與家庭生活分享，讓陪伴成為孩子成長路上的美好養分。 親子活動分享 精選 親子活動 家長交流分享 育兒知識與 成長資訊 親子 生活靈感 為什麼選擇這裡？ 一起留下更多美好的回憶 親子手作課程 戶外自然探索 親子共讀活動 科學實驗體驗 美術創作課程 幼兒發展與親子互動 情緒教育與品格培養 學習習慣與親子閱讀 親子美食分享 假日出遊推薦 居家遊戲創意 手作 DIY・繪本 節日布置靈感",
+    "url": "activities-1783670716869.html"
+  },
+  {
+    "title": "熱門活動排行",
+    "type": "排行",
+    "keywords": "童序 Tongxu · 本月活動查看排行 童序本月親子活動查看排行，整理北部、中部、南部、東部精選活動日期與地點。 本月親子活動 查看排行 北部 《阿甯咕這一家》親子劇 童心電影院 × 台灣國際兒童影展 櫻桃小丸子原作40週年特展 波隆那世界插畫大獎展 CHIIKAWA DAYS 台北特展 建築光雕暨聲光環境劇場－海山夜行 新北市兒童藝術節 PEANUTS 夏日海灘祭 Anime Max Festival 動漫最高祭 福隆國際沙雕藝術季 桃園兒童藝術節 鐵道藝術村－精靈在哪裡 夏季水漾月 風城藝術節 基隆鎖管季－手作一夜干體驗 中部 《阿公的跟屁蟲》合唱劇場 小小自然探險家 異起樂翻天 台中翻轉動漫祭 《魔女宅急便》音樂劇 台秋祭 通霄沙雕藝術節 貓裏表演藝術節 南投 Hakka 嘉年華 雲西海洋音樂季 彰化兒童藝術節 彰濱海 FUN 一夏－慶安水樂園 南部 東石海之夏 南宮學院－校慶大作戰（實境解謎） 臺南國際芒果節 巧虎大型舞台劇－銀河怪盜的祕密 花露露的童樂節 巧虎大型舞台劇 義大極地夢幻水世界 大港閱冰 蠟筆小新－玩轉！時空大冒險互動展 屏東夏日狂歡祭 東部 壯圍沙丘藝術節－星夜沙丘音樂會 宜蘭國際童玩藝術節 蘭陽星空賞螢季 花蓮夏戀嘉年華 花蓮 FUN 暑假 × 航海王 臺灣國際熱氣球嘉年華 熱氣球光雕音樂會 台東博覽會 童 #01 《阿甯咕這一家》親子劇 📅 7/18－7/19 📍 國家兩廳院 #02 童心電影院 × 台灣國際兒童影展 📅 7/5－7/25 📍 國家電影及視聽文化中心 #03 櫻桃小丸子原作40週年特展 📅 6/18－9/28 📍 松山文創園區 #04 波隆那世界插畫大獎展 📅 7/4－9/28 📍 華山1914 #05 CHIIKAWA DAYS 台北特展 📅 7/4－9/27 📍 華山1914 #06 建築光雕暨聲光環境劇場－海山夜行 📅 6/20－7/12 📍 新北市美術館 #07 新北市兒童藝術節 📅 7/11－7/19 📍 新北市市民廣場 #08 PEANUTS 夏日海灘祭 📅 6/18－9/14 📍 華山1914 #09 Anime Max Festival 動漫最高祭 📅 6/18－9/13 📍 華山1914 #10 福隆國際沙雕藝術季 📅 即日起－10/26 📍 福隆海水浴場 #11 桃園兒童藝術節 📅 7/4－7/26 📍 桃園 #12 鐵道藝術村－精靈在哪裡 📅 即日起－7/19 📍 新竹鐵道藝術村 #13 夏季水漾月 📅 7/4－7/5 📍 青草湖風景區 #14 風城藝術節 📅 7/4－8/15 📍 新竹市區 #15 基隆鎖管季－手作一夜干體驗 📅 7/4－7/25 📍 基隆 #01 《阿公的跟屁蟲》合唱劇場 📅 7/31 📍 臺中國家歌劇院 #02 小小自然探險家 📅 7/4－8/29 📍 大里藝術廣場 #03 異起樂翻天 📅 7/1－8/31 📍 大里藝術廣場 #04 台中翻轉動漫祭 📅 6/26－7/13 📍 中友百貨 #05 《魔女宅急便》音樂劇 📅 7/24－8/2 📍 臺中國家歌劇院 #06 台秋祭 📅 7/18－7/19 📍 台中驛鐵道文化園區 #07 通霄沙雕藝術節 📅 7/4－9/6 📍 苗栗通霄海水浴場 #08 貓裏表演藝術節 📅 即日起－8/30 📍 苗栗中正堂演藝廳 #09 南投 Hakka 嘉年華 📅 7/11 📍 中興新村 #10 雲西海洋音樂季 📅 7/25－7/26 📍 三條崙海水浴場 #11 彰化兒童藝術節 📅 7/19－8/9 📍 彰化 #12 彰濱海 FUN 一夏－慶安水樂園 📅 7/4－8/2 📍 彰化自然教育中心 #01 東石海之夏 📅 7/18－7/26 📍 嘉義東石漁人碼頭 #02 南宮學院－校慶大作戰（實境解謎） 📅 即日起－11/15 📍 故宮南院 #03 臺南國際芒果節 📅 6/27－7/12 📍 臺南 #04 巧虎大型舞台劇－銀河怪盜的祕密 📅 7/11 📍 臺南文化中心 #05 花露露的童樂節 📅 7/4－7/19 📍 衛武營國家藝術中心 #06 巧虎大型舞台劇 📅 7/4－7/5 📍 衛武營國家藝術中心 #07 義大極地夢幻水世界 📅 7/4－8/30 📍 義大世界 #08 大港閱冰 📅 7/18－7/19 📍 高雄哈瑪星 #0",
+    "url": "activity-ranking.html"
+  },
+  {
+    "title": "親子玩水景點",
+    "type": "景點",
+    "keywords": "親子玩水景點・2026 夏季精選 · 童序 Tongxu 童序精選 5 個雙北親子玩水景點：臺北自來水園區、陽光運動公園、重陽花漾水樂園、十四張歷史公園、新北大都會公園，附開放時間、票價與交通資訊。 雙北 親子玩水 景點精選 臺北自來水園區 陽光運動公園 重陽花漾水樂園 十四張歷史公園 新北大都會公園（熊猴森海世界水樂園） 營業時間 夏季(7-8月) 二～日 09:00–18:00；非夏季 09:00–17:00。週一休園（連假照常）。 水鄉庭園 夏季 7–8 月開放 園區門票 夏季 全票 80 / 優待 40；非夏季 全票 50 / 優待 25（含自來水博物館+水鄉庭園） 親水樂園 全票 平日160/假日180；學生 平日130/假日160；優待 平日80/假日90；未滿3歲免票 地址 台北市中正區思源街 1 號 · Google Map 捷運 開放時間 2026 年 7–8 月每日 10:00–12:00 / 15:00–17:00（週二固定休園維護） 費用 免費 地址 新北市新店區安業街 · Google Map 捷運 開放時間 2026 年 7、8 月暑假每日開放（週二休園維護）；9 月為例假日及國定假日開放 噴水時間 10:00–12:00、15:00–19:00 費用 免費 地址 新北市三重區 · Google Map 捷運 開放時間 週一至週五 16:30–18:30；週六日 10:30–11:30、15:00–18:30。每半小時噴水一次，每次約 15 分鐘。 費用 免費 地址 新北市新店區央北二路與啟文路交叉口 · Google Map 捷運 開放時間 2026 年 7、8 月暑假每日開放（週二休園維護）；9 月為例假日及國定假日開放 噴水時間 10:00–12:00、15:00–19:00 費用 免費 地址 新北市三重區水漾路一段 · Google Map 捷運",
+    "url": "tongxu-site/spots.html"
+  },
+  {
+    "title": "專家育兒觀點",
+    "type": "文章",
+    "keywords": "專家 文章 育兒 教育 心理 親職 林曉筑 陳彥宏 吳沛璇 兒童發展 小兒科 親職教育",
+    "url": "#experts"
+  },
+  {
+    "title": "社群交流與優惠",
+    "type": "社群",
+    "keywords": "社群 家長 交流 優惠 分享 親子活動分享 優惠資訊 親子景點 熱門景點",
+    "url": "#community"
+  },
+  {
+    "title": "常見問題",
+    "type": "FAQ",
+    "keywords": "加入童序 付費 免費 活動資訊可靠 年齡 0-12歲 店家 品牌 合作",
+    "url": "#faq"
+  }
 ];
 function renderQuickSearch(query=''){
   if(!quickSearchResults)return;
   const q=query.trim().toLowerCase();
   const matches=quickSearchItems.filter(item=>!q||`${item.title} ${item.type} ${item.keywords}`.toLowerCase().includes(q));
-  quickSearchResults.innerHTML=matches.length?matches.map(item=>`<button class="search-option" type="button" data-url="${item.url}"><span>${item.title}</span><small>${item.type}</small></button>`).join(''):'<div class="search-empty">找不到完全符合的項目，請換個關鍵字試試。</div>';
+  quickSearchResults.innerHTML=matches.length?matches.map(item=>`<button class="search-option" type="button" data-url="${item.url}"><span><span class="result-title">${item.title}</span><span class="result-url">${item.url.startsWith('#')?'首頁區塊':item.url}</span></span><small>${item.type}</small></button>`).join(''):'<div class="search-empty">找不到完全符合的項目，請換個關鍵字試試。</div>';
   quickSearchResults.classList.add('open');
 }
 if(quickSearchForm&&quickSearchInput&&quickSearchResults){
