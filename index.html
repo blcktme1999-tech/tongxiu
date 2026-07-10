@@ -559,23 +559,39 @@ section{position:relative}
 <script>
 document.documentElement.classList.remove('no-js');
 const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+if(nav){
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+}
 const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
-const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
-if(burger){
+if(burger&&links){
   burger.addEventListener('click',()=>links.classList.toggle('open'));
 }
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
-document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
-setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),4000);
-function animate(el){const t=+el.dataset.count,suf=el.dataset.suffix||'',dur=1600,st=performance.now();
+if(links){
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+}
+const revealEls=document.querySelectorAll('.reveal:not(.in)');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  revealEls.forEach(el=>io.observe(el));
+}else{
+  revealEls.forEach(el=>el.classList.add('in'));
+}
+setTimeout(()=>revealEls.forEach(el=>el.classList.add('in')),4000);
+function animate(el){
+  const t=Number(el.dataset.count)||0,suf=el.dataset.suffix||'',dur=1600,st=performance.now();
   function step(now){let p=Math.min((now-st)/dur,1);p=1-Math.pow(1-p,3);el.textContent=Math.floor(p*t).toLocaleString()+suf;if(p<1)requestAnimationFrame(step)}
-  requestAnimationFrame(step)}
-const cio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){animate(e.target);cio.unobserve(e.target)}}),{threshold:.5});
-document.querySelectorAll('.num').forEach(n=>cio.observe(n));
+  requestAnimationFrame(step);
+}
+const nums=document.querySelectorAll('.num');
+const animatedNums=new WeakSet();
+function runNumber(el){if(animatedNums.has(el))return;animatedNums.add(el);animate(el)}
+if('IntersectionObserver' in window){
+  const cio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){runNumber(e.target);cio.unobserve(e.target)}}),{threshold:.2});
+  nums.forEach(n=>cio.observe(n));
+  setTimeout(()=>nums.forEach(runNumber),1200);
+}else{
+  nums.forEach(runNumber);
+}
 </script>
 </body>
 </html>
