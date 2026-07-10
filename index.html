@@ -89,6 +89,20 @@ a{color:inherit;text-decoration:none}
 .hero-visual .photo img{width:100%;height:100%;object-fit:cover}
 .hero-badge{position:absolute;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);border-radius:20px;padding:13px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px;font-weight:700;font-family:"Baloo 2"}
 .hero-badge .dot{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem}
+
+
+/* ---------- HERO QUICK CARDS ---------- */
+.hero-tools{display:grid;grid-template-columns:1.08fr .92fr .92fr .92fr;gap:18px;margin:0 auto 52px;position:relative;z-index:3}
+.hero-tool{min-height:154px;background:rgba(255,255,255,.72);border:1px solid rgba(238,228,210,.95);border-radius:18px;padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.35s var(--ease)}
+.hero-tool:hover{transform:translateY(-4px);background:#fff;border-color:rgba(238,143,78,.25)}
+.tool-head{display:flex;align-items:flex-start;gap:15px;position:relative;z-index:2}
+.tool-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:1.42rem;color:#fff;flex-shrink:0}
+.tool-icon.green{background:linear-gradient(135deg,#9DCC71,var(--green-2))}.tool-icon.orange{background:linear-gradient(135deg,#F59B70,var(--orange-2))}.tool-icon.gold{background:linear-gradient(135deg,#FFC247,#F59C17)}
+.tool-title{font-size:1.12rem;font-weight:800;margin-bottom:2px}.tool-sub{font-size:.88rem;color:var(--muted);line-height:1.5}
+.tool-search{display:flex;align-items:center;gap:8px;background:rgba(252,249,243,.9);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:16px;color:var(--muted);font-size:.86rem}
+.tool-search span:last-child{margin-left:auto;color:var(--ink-soft)}
+.tool-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tool-tags span{background:var(--green-tint);color:#5D8C3F;font-weight:700;font-size:.78rem;padding:5px 11px;border-radius:999px}
+.tool-link{font-weight:800;color:#B66A2E;font-size:.92rem;position:relative;z-index:2}.tool-ill{position:absolute;right:18px;bottom:14px;font-size:3.7rem;opacity:.88;line-height:1}.tool-chart{position:absolute;right:20px;bottom:22px;width:92px;height:74px}.tool-chart svg{width:100%;height:100%;overflow:visible}.tool-note{font-weight:700;font-size:.92rem;color:var(--ink-soft);position:relative;z-index:2}
 .badge-1{top:24px;left:-24px;animation:float 5s var(--ease) infinite}
 .badge-2{bottom:36px;right:-22px;animation:float 5s var(--ease) infinite .8s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -271,6 +285,7 @@ section{position:relative}
 .menu-only{display:none}
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1000px){
+  .hero-tools{grid-template-columns:repeat(2,1fr);margin-bottom:42px}
   .card-row,.comm-grid,.res-grid,.stats-grid{grid-template-columns:repeat(2,1fr)}
   .exp-grid,.steps-grid,.testi-grid{grid-template-columns:1fr}
   .hero-grid,.feat-grid{grid-template-columns:1fr;gap:44px}
@@ -279,6 +294,8 @@ section{position:relative}
   .hero{padding:150px 0 80px}
 }
 @media(max-width:640px){
+  .hero-tools{grid-template-columns:1fr;gap:12px;margin-bottom:34px}
+  .hero-tool{min-height:132px;padding:18px}
   .nav-links{display:none}.burger{display:flex}
   .nav>div .nav-cta{display:none}
   .nav-links.open .menu-only{display:block;text-align:center;color:#fff;background:var(--orange);margin-top:6px}
@@ -354,6 +371,29 @@ section{position:relative}
 <header class="hero" id="home">
   <div class="deco deco-hero-1"><img src="assets/deco-science.png" alt="" aria-hidden="true"></div>
   <div class="deco deco-hero-2"><img src="assets/deco-stay.png" alt="" aria-hidden="true"></div>
+
+  <div class="wrap hero-tools reveal in">
+    <a class="hero-tool" href="activity-ranking.html">
+      <div>
+        <div class="tool-head"><span class="tool-icon green">⌕</span><div><h3 class="tool-title">快速搜尋</h3><p class="tool-sub">找景點、活動、文章</p></div></div>
+        <div class="tool-search"><span>搜尋景點、飯店、活動...</span><span>⌕</span></div>
+        <div class="tool-tags"><span>親子景點</span><span>暑假活動</span><span>0-3歲</span></div>
+      </div>
+    </a>
+    <a class="hero-tool" href="activities.html">
+      <div class="tool-head"><span class="tool-icon orange">▣</span><div><h3 class="tool-title">本月活動</h3><p class="tool-sub">新增 32 場親子活動</p></div></div>
+      <span class="tool-link">立即查看 →</span><span class="tool-ill">🎈</span>
+    </a>
+    <a class="hero-tool" href="activity-ranking.html">
+      <div class="tool-head"><span class="tool-icon gold">🔥</span><div><h3 class="tool-title">熱門景點</h3><p class="tool-sub">親子景點 TOP10</p></div></div>
+      <span class="tool-link">查看排行 →</span><span class="tool-ill">🏆</span>
+    </a>
+    <a class="hero-tool" href="#community">
+      <div class="tool-head"><span class="tool-icon green">👥</span><div><h3 class="tool-title">社群成長</h3><p class="tool-sub">1,000+ 家庭加入</p></div></div>
+      <span class="tool-note">每天持續增加中！</span>
+      <div class="tool-chart" aria-hidden="true"><svg viewBox="0 0 100 74" fill="none"><path d="M6 62L24 46L39 54L55 30L69 38L91 10" stroke="#8DBE6E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M91 10L88 27M91 10L75 14" stroke="#8DBE6E" stroke-width="6" stroke-linecap="round"/></svg></div>
+    </a>
+  </div>
   <div class="wrap hero-grid">
     <div class="reveal in">
       <div class="hero-rating">
