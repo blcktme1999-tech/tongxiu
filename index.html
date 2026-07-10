@@ -100,7 +100,16 @@ a{color:inherit;text-decoration:none}
 .tool-icon.green{background:linear-gradient(135deg,#9DCC71,var(--green-2))}.tool-icon.orange{background:linear-gradient(135deg,#F59B70,var(--orange-2))}.tool-icon.gold{background:linear-gradient(135deg,#FFC247,#F59C17)}
 .tool-title{font-size:1.12rem;font-weight:800;margin-bottom:2px}.tool-sub{font-size:.88rem;color:var(--muted);line-height:1.5}
 .tool-search{display:flex;align-items:center;gap:8px;background:rgba(252,249,243,.9);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:16px;color:var(--muted);font-size:.86rem}
-.tool-search span:last-child{margin-left:auto;color:var(--ink-soft)}
+.tool-search input{width:100%;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;outline:0}
+.tool-search input::placeholder{color:var(--muted)}
+.tool-search button{margin-left:auto;border:0;background:transparent;color:var(--ink-soft);font:inherit;font-weight:800;cursor:pointer;padding:0 2px}
+.tool-search button:focus-visible,.search-option:focus-visible{outline:3px solid var(--orange-soft);outline-offset:2px}
+.search-results{display:none;margin-top:10px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.search-results.open{display:grid;gap:6px}
+.search-option{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 12px;border:0;border-radius:10px;background:var(--cream);color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:.2s var(--ease)}
+.search-option:hover{background:var(--green-tint);color:#4f7e34}
+.search-option small{color:var(--muted);font-size:.75rem;white-space:nowrap}
+.search-empty{padding:10px 12px;color:var(--muted);font-size:.84rem}
 .tool-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tool-tags span{background:var(--green-tint);color:#5D8C3F;font-weight:700;font-size:.78rem;padding:5px 11px;border-radius:999px}
 .tool-link{font-weight:800;color:#B66A2E;font-size:.92rem;position:relative;z-index:2}.tool-ill{position:absolute;right:18px;bottom:14px;font-size:3.7rem;opacity:.88;line-height:1}.tool-chart{position:absolute;right:20px;bottom:22px;width:92px;height:74px}.tool-chart svg{width:100%;height:100%;overflow:visible}.tool-note{font-weight:700;font-size:.92rem;color:var(--ink-soft);position:relative;z-index:2}
 .badge-1{top:24px;left:-24px;animation:float 5s var(--ease) infinite}
@@ -373,13 +382,17 @@ section{position:relative}
   <div class="deco deco-hero-2"><img src="assets/deco-stay.png" alt="" aria-hidden="true"></div>
 
   <div class="wrap hero-tools reveal in">
-    <a class="hero-tool" href="activity-ranking.html">
+    <div class="hero-tool quick-search" role="search" aria-label="快速搜尋">
       <div>
         <div class="tool-head"><span class="tool-icon green">⌕</span><div><h3 class="tool-title">快速搜尋</h3><p class="tool-sub">找景點、活動、文章</p></div></div>
-        <div class="tool-search"><span>搜尋景點、飯店、活動...</span><span>⌕</span></div>
-        <div class="tool-tags"><span>親子景點</span><span>暑假活動</span><span>0-3歲</span></div>
+        <form class="tool-search" id="quickSearchForm" autocomplete="off">
+          <input id="quickSearchInput" type="search" placeholder="搜尋景點、飯店、活動..." aria-label="搜尋景點、飯店、活動">
+          <button type="submit" aria-label="顯示搜尋結果">⌕</button>
+        </form>
+        <div class="search-results" id="quickSearchResults" aria-live="polite"></div>
+        <div class="tool-tags" aria-label="熱門搜尋"><span data-search-term="親子景點">親子景點</span><span data-search-term="暑假活動">暑假活動</span><span data-search-term="0-3歲">0-3歲</span></div>
       </div>
-    </a>
+    </div>
     <a class="hero-tool" href="activity-ranking.html">
       <div class="tool-head"><span class="tool-icon orange">▣</span><div><h3 class="tool-title">本月活動</h3><p class="tool-sub">新增 32 場親子活動</p></div></div>
       <span class="tool-link">立即查看 →</span><span class="tool-ill">🎈</span>
@@ -632,6 +645,39 @@ if('IntersectionObserver' in window){
 }else{
   nums.forEach(runNumber);
 }
+
+const quickSearchForm=document.getElementById('quickSearchForm');
+const quickSearchInput=document.getElementById('quickSearchInput');
+const quickSearchResults=document.getElementById('quickSearchResults');
+const quickSearchItems=[
+  {title:'親子景點 TOP10',type:'景點',keywords:'親子景點 熱門景點 top 排行 博物館 公園 展覽',url:'spots.html'},
+  {title:'本月親子活動',type:'活動',keywords:'本月活動 暑假活動 親子活動 優惠 分享 0-3歲 幼兒',url:'activities.html'},
+  {title:'熱門活動排行',type:'排行',keywords:'活動排行 熱門景點 排名 推薦',url:'activity-ranking.html'},
+  {title:'專家育兒觀點',type:'文章',keywords:'專家 文章 育兒 教育 心理 親職',url:'#experts'},
+  {title:'社群交流與優惠',type:'社群',keywords:'社群 家長 交流 優惠 分享',url:'#community'}
+];
+function renderQuickSearch(query=''){
+  if(!quickSearchResults)return;
+  const q=query.trim().toLowerCase();
+  const matches=quickSearchItems.filter(item=>!q||`${item.title} ${item.type} ${item.keywords}`.toLowerCase().includes(q));
+  quickSearchResults.innerHTML=matches.length?matches.map(item=>`<button class="search-option" type="button" data-url="${item.url}"><span>${item.title}</span><small>${item.type}</small></button>`).join(''):'<div class="search-empty">找不到完全符合的項目，請換個關鍵字試試。</div>';
+  quickSearchResults.classList.add('open');
+}
+if(quickSearchForm&&quickSearchInput&&quickSearchResults){
+  quickSearchInput.addEventListener('focus',()=>renderQuickSearch(quickSearchInput.value));
+  quickSearchInput.addEventListener('input',()=>renderQuickSearch(quickSearchInput.value));
+  quickSearchForm.addEventListener('submit',(event)=>{event.preventDefault();renderQuickSearch(quickSearchInput.value)});
+  quickSearchResults.addEventListener('click',(event)=>{
+    const option=event.target.closest('.search-option');
+    if(option&&option.dataset.url) location.href=option.dataset.url;
+  });
+  document.querySelectorAll('[data-search-term]').forEach(tag=>tag.addEventListener('click',()=>{
+    quickSearchInput.value=tag.dataset.searchTerm||tag.textContent.trim();
+    renderQuickSearch(quickSearchInput.value);
+    quickSearchInput.focus();
+  }));
+}
+
 </script>
 </body>
 </html>
