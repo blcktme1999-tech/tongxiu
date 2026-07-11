@@ -29,7 +29,7 @@
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
 body{font-family:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--cream);line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,.display{font-family:"Baloo 2","Noto Sans TC",sans-serif;letter-spacing:.01em;line-height:1.26}
 .serif{font-family:"Noto Serif TC",serif}
@@ -44,8 +44,8 @@ a{color:inherit;text-decoration:none}
 .topbar .wrap{display:flex;align-items:center;justify-content:space-between}
 .tb-brand{display:flex;align-items:center;gap:11px;font-family:"Baloo 2";font-weight:800;font-size:1.2rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
 .tb-brand img{width:40px;height:40px;border-radius:12px;object-fit:cover;box-shadow:var(--shadow-sm)}
-.tb-back{font-family:"Baloo 2";font-weight:700;font-size:.92rem;color:#fff;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4);padding:9px 20px;border-radius:999px;transition:.28s var(--ease)}
-.tb-back:hover{background:rgba(255,255,255,.32)}
+.tb-back{font-family:"Baloo 2";font-weight:700;font-size:.92rem;color:#fff;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4);padding:9px 20px;border-radius:999px}
+
 
 /* ---------- HERO BANNER (full-bleed) ---------- */
 .hero{position:relative;min-height:clamp(440px,72vh,620px);display:flex;align-items:flex-end;overflow:hidden}
@@ -77,15 +77,15 @@ a{color:inherit;text-decoration:none}
 .pg-5 .ph:nth-child(3),.pg-5 .ph:nth-child(4),.pg-5 .ph:nth-child(5){grid-column:span 2}
 .pg-3{grid-template-columns:repeat(3,1fr)}
 .ph{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);position:relative;aspect-ratio:4/3;background:var(--cream-2)}
-.ph img{width:100%;height:100%;object-fit:cover;transition:.7s var(--ease)}
-.ph:hover img{transform:scale(1.06)}
+.ph img{width:100%;height:100%;object-fit:cover}
+
 .ph .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 14px;background:linear-gradient(transparent,rgba(30,26,20,.72));color:#fff;font-family:"Baloo 2";font-weight:700;font-size:1rem}
 
 /* ---------- TAG LIST ---------- */
 .taglist{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:840px;margin:0 auto}
-.taglist span{font-family:"Baloo 2","Noto Sans TC";font-weight:700;font-size:1rem;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-xs);padding:11px 22px;border-radius:999px;color:var(--ink);transition:.3s var(--ease)}
-.taglist span:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);color:var(--orange-2)}
-.tint-o span:hover{color:var(--orange-2)}
+.taglist span{font-family:"Baloo 2","Noto Sans TC";font-weight:700;font-size:1rem;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-xs);padding:11px 22px;border-radius:999px;color:var(--ink)}
+
+
 .foot-note{text-align:center;color:var(--ink-soft);font-size:1.05rem;margin-top:30px;max-width:720px;margin-left:auto;margin-right:auto}
 
 /* ---------- SOFT BLOCK (家長交流) ---------- */
@@ -99,8 +99,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- WHY CHOOSE ---------- */
 .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:8px}
-.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:var(--shadow-xs);transition:.4s var(--ease)}
-.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm)}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:var(--shadow-xs)}
+
 .why-card .n{width:46px;height:46px;margin:0 auto 14px;border-radius:14px;display:grid;place-items:center;font-family:"Baloo 2";font-weight:800;font-size:1.2rem;background:var(--orange-tint);color:var(--orange-2)}
 .why-card p{font-size:.98rem;font-weight:500;color:var(--ink)}
 
@@ -118,8 +118,8 @@ a{color:inherit;text-decoration:none}
 .line-cta .mega{font-size:2rem}
 .line-cta h4{font-size:1.08rem;font-weight:700;margin-bottom:3px}
 .line-cta p{font-size:.92rem;color:var(--ink-soft)}
-.line-cta .btn{font-family:"Baloo 2";font-weight:700;font-size:1rem;color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-2));padding:14px 32px;border-radius:999px;box-shadow:0 12px 26px rgba(238,143,78,.35);white-space:nowrap;transition:.3s var(--ease)}
-.line-cta .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(238,143,78,.45)}
+.line-cta .btn{font-family:"Baloo 2";font-weight:700;font-size:1rem;color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange-2));padding:14px 32px;border-radius:999px;box-shadow:0 12px 26px rgba(238,143,78,.35);white-space:nowrap}
+
 
 /* ---------- FOOTER ---------- */
 .footer{background:var(--ink);color:#EDE7DC;padding:46px 0 28px;margin-top:70px}
@@ -130,10 +130,13 @@ a{color:inherit;text-decoration:none}
 .footer a.back{color:var(--orange-soft);font-size:.92rem;font-weight:600}
 
 /* ---------- REVEAL ---------- */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.reveal{opacity:1;transform:none}
+
+
+
+
+/* ---------- MOTION / HOVER DISABLED ---------- */
+*,*::before,*::after{animation:none!important;transition:none!important}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
@@ -310,9 +313,7 @@ a{color:inherit;text-decoration:none}
 </footer>
 
 <script>
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),3500);
+// Motion effects intentionally disabled.
 </script>
 </body>
 </html>
