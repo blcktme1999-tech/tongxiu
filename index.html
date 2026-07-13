@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>精彩童趣  x  幸福序曲 · 台灣最溫暖的親子成長媒體社群</title>
-<meta name="description" content="精彩童趣  x  幸福序曲是聚集家長的親子成長媒體與社群平台。精選親子活動、專家育兒觀點、親子景點導覽與教育資源，讓每個家庭更輕鬆找到適合孩子的體驗。">
-<meta property="og:title" content="精彩童趣  x  幸福序曲 · 台灣最溫暖的親子成長媒體社群">
+<title>童序 Tongxu · 台灣最溫暖的親子成長媒體社群</title>
+<meta name="description" content="童序是聚集家長的親子成長媒體與社群平台。精選親子活動、專家育兒觀點、親子景點導覽與教育資源，讓每個家庭更輕鬆找到適合孩子的體驗。">
+<meta property="og:title" content="童序 Tongxu · 台灣最溫暖的親子成長媒體社群">
 <meta property="og:description" content="精選親子活動、專家育兒觀點、親子景點導覽與教育資源。">
 <meta property="og:type" content="website">
-<link rel="icon" href="https://cdn.phototourl.com/member/2026-07-13-4467e805-3863-42b9-968a-718d6fa339cf.jpg">
+<meta property="og:image" content="https://cdn.phototourl.com/member/2026-07-13-5d586aa2-9965-4482-8f29-b7b8ad98f765.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.phototourl.com/member/2026-07-13-5d586aa2-9965-4482-8f29-b7b8ad98f765.jpg">
+<link rel="icon" type="image/jpeg" href="https://cdn.phototourl.com/member/2026-07-13-5d586aa2-9965-4482-8f29-b7b8ad98f765.jpg">
+<link rel="apple-touch-icon" href="https://cdn.phototourl.com/member/2026-07-13-5d586aa2-9965-4482-8f29-b7b8ad98f765.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -51,7 +55,7 @@ a{color:inherit;text-decoration:none}
 .nav{position:fixed;top:58px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:var(--maxw);z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 12px 9px 20px;border-radius:999px;background:rgba(252,249,243,.72);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow-sm);transition:top .4s var(--ease),box-shadow .4s var(--ease),background .4s var(--ease)}
 .nav.scrolled{top:14px;box-shadow:var(--shadow);background:rgba(252,249,243,.92)}
 .brand{display:flex;align-items:center;gap:11px;font-family:"Baloo 2";font-weight:800;font-size:1.26rem;color:var(--ink)}
-.brand img{width:40px;height:40px;border-radius:12px;object-fit:cover;box-shadow:var(--shadow-sm)}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#fff;padding:0;box-shadow:var(--shadow-sm)}
 .brand small{display:block;font-family:"Noto Sans TC";font-weight:400;font-size:.6rem;letter-spacing:.22em;color:var(--muted);margin-top:-2px}
 .nav-links{display:flex;align-items:center;gap:2px}
 .nav-links a{font-weight:500;font-size:.95rem;color:var(--ink-soft);padding:9px 14px;border-radius:999px;transition:.25s var(--ease)}
@@ -60,6 +64,15 @@ a{color:inherit;text-decoration:none}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(238,143,78,.46)}
 .burger{display:none;flex-direction:column;gap:5px;padding:12px;border-radius:14px;background:rgba(255,255,255,.7);cursor:pointer;border:none}
 .burger span{width:22px;height:2.4px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ---------- TOP COVER ---------- */
+.top-cover{position:relative;margin-top:0;padding:108px 0 0;background:linear-gradient(180deg,var(--cream),var(--cream-2));overflow:hidden}
+.top-cover::before{content:"";position:absolute;inset:0;background:radial-gradient(46% 52% at 14% 8%,var(--green-tint) 0%,transparent 58%),radial-gradient(50% 52% at 92% 10%,var(--orange-tint) 0%,transparent 62%);pointer-events:none}
+.top-cover .wrap{max-width:1440px;padding:0 18px}
+.cover-frame{position:relative;z-index:2;border-radius:42px;overflow:hidden;background:#fff;border:10px solid rgba(255,255,255,.72);box-shadow:var(--shadow-lg);aspect-ratio:16/7.4}
+.cover-frame img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cover-caption{position:absolute;left:28px;bottom:24px;z-index:3;display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(252,249,243,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-family:"Baloo 2","Noto Sans TC",sans-serif;font-weight:800;color:var(--ink)}
+.cover-caption span{width:10px;height:10px;border-radius:50%;background:var(--orange)}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;padding:190px 0 96px;overflow:hidden}
@@ -265,7 +278,7 @@ section{position:relative}
 .footer{background:var(--ink);color:#EDE7DC;padding:74px 0 34px;margin-top:104px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot-brand{display:flex;align-items:center;gap:12px;font-family:"Baloo 2";font-weight:800;font-size:1.4rem;margin-bottom:16px}
-.foot-brand img{width:46px;height:46px;border-radius:13px;object-fit:cover}
+.foot-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#fff;padding:0}
 .foot-brand-col p{color:#B7AF9F;font-size:.97rem;max-width:320px}
 .foot-col h4{font-family:"Baloo 2";font-size:1.04rem;margin-bottom:18px;color:#fff}
 .foot-col a{display:block;color:#B7AF9F;font-size:.95rem;padding:6px 0;transition:.25s}
@@ -302,6 +315,9 @@ section{position:relative}
   .hero{padding:150px 0 80px}
 }
 @media(max-width:640px){
+  .top-cover{padding-top:104px}
+  .cover-frame{aspect-ratio:16/9;border-width:6px;border-radius:24px}
+  .cover-caption{left:16px;bottom:14px;padding:8px 13px;font-size:.9rem}
   .hero-tools{grid-template-columns:1fr;gap:12px;margin-bottom:34px}
   .hero-tool{min-height:132px;padding:18px}
   .nav-links{display:none}.burger{display:flex}
@@ -309,7 +325,7 @@ section{position:relative}
   .nav-links.open .menu-only{display:block;text-align:center;color:#fff;background:var(--orange);margin-top:6px}
   .brand small{display:none}
   .nav{padding:8px 10px 8px 14px}
-  .brand{font-size:1.14rem;gap:9px}.brand img{width:36px;height:36px}
+  .brand{font-size:1.14rem;gap:9px}.brand img{width:40px;height:40px;padding:0}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;right:0;background:rgba(252,249,243,.97);backdrop-filter:blur(18px);padding:14px;border-radius:24px;box-shadow:var(--shadow);gap:4px;min-width:210px;align-items:stretch}
   .nav-links.open a{padding:12px 18px}
   .hero{padding:130px 0 66px}
@@ -360,11 +376,11 @@ section{position:relative}
 <body>
 
 <!-- ANNOUNCE -->
-<div class="announce"><span class="tag">新上線</span>精彩童趣  x  幸福序曲 2026 夏季親子活動指南已發布 · <a href="https://lin.ee/xN7zZSe">立即閱讀 →</a></div>
+<div class="announce"><span class="tag">新上線</span>童序 2026 夏季親子活動指南已發布 · <a href="https://lin.ee/xN7zZSe">立即閱讀 →</a></div>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a class="brand" href="#home"><img src="https://cdn.phototourl.com/member/2026-07-13-4467e805-3863-42b9-968a-718d6fa339cf.jpg" alt="精彩童趣  x  幸福序曲 logo"><span>精彩童趣  x  幸福序曲<small> · 親子成長社群</small></span></a>
+  <a class="brand" href="#home"><img src="logo-clean.png" alt="童序 logo"><span>童序<small>TONGXU · 親子成長社群</small></span></a>
   <div class="nav-links" id="navLinks">
     
     <a href="#experts">專家觀點</a>
@@ -374,6 +390,16 @@ section{position:relative}
   </div>
   
 </nav>
+
+<!-- TOP COVER -->
+<section class="top-cover" aria-label="童序封面照片">
+  <div class="wrap">
+    <div class="cover-frame reveal in">
+      <img src="https://cdn.phototourl.com/member/2026-07-13-5d586aa2-9965-4482-8f29-b7b8ad98f765.jpg" alt="童序網頁封面照片">
+      <div class="cover-caption"><span></span>精彩童趣 x 幸福序曲</div>
+    </div>
+  </div>
+</section>
 
 <!-- HERO -->
 <header class="hero" id="home">
@@ -409,10 +435,10 @@ section{position:relative}
     <div class="reveal in">
       <div class="hero-rating">
         <div class="av"><span class="tint-o">👦</span><span class="tint-g">👧</span><span class="tint-b">🧒</span></div>
-        <small><b>1,000+ 家庭</b> 每天在精彩童趣  x  幸福序曲找到好活動</small>
+        <small><b>1,000+ 家庭</b> 每天在童序找到好活動</small>
       </div>
       <h1>陪伴每個家庭，<br>探索孩子<span class="hl">成長的每一步</span>。</h1>
-      <p class="sub">精彩童趣  x  幸福序曲集結精選親子活動、專家育兒觀點與親子景點導覽，用媒體的深度與社群的溫度，讓每個家庭都能更輕鬆找到適合孩子的體驗。</p>
+      <p class="sub">童序集結精選親子活動、專家育兒觀點與親子景點導覽，用媒體的深度與社群的溫度，讓每個家庭都能更輕鬆找到適合孩子的體驗。</p>
       
       <div class="hero-trust">
         <span>⭐ <b>4.9</b> 家長評價</span>
@@ -446,9 +472,9 @@ section{position:relative}
 <section class="sec" id="about">
   <div class="deco deco-about"><img src="assets/deco-logo.png" alt="" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">About Us</span><h2>關於精彩童趣  x  幸福序曲</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">About Us</span><h2>關於童序</h2></div>
     <div class="about-lead reveal d1">
-      <p class="serif"><strong>精彩童趣  x  幸福序曲相信，每一次陪伴，都是孩子成長的重要片段。</strong></p>
+      <p class="serif"><strong>童序相信，每一次陪伴，都是孩子成長的重要片段。</strong></p>
       <p>我們把散落各處的親子活動、景點與育兒知識，用媒體的專業與社群的溫度重新整理，讓忙碌的家長不再花時間搜尋，就能安心地為孩子挑選最好的體驗。</p>
     </div>
     <div class="card-row">
@@ -491,9 +517,9 @@ section{position:relative}
 <!-- STEPS -->
 <section class="sec" id="how">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">How It Works</span><h2>三步驟，開始探索</h2><p>加入精彩童趣  x  幸福序曲，比想像中更簡單。</p></div>
+    <div class="sec-head reveal"><span class="eyebrow">How It Works</span><h2>三步驟，開始探索</h2><p>加入童序，比想像中更簡單。</p></div>
     <div class="steps-grid">
-      <div class="step"><div class="no"></div><h3>免費加入社群</h3><p>一分鐘完成註冊，馬上成為精彩童趣  x  幸福序曲大家庭的一員。</p></div>
+      <div class="step"><div class="no"></div><h3>免費加入社群</h3><p>一分鐘完成註冊，馬上成為童序大家庭的一員。</p></div>
       <div class="step"><div class="no"></div><h3>設定孩子與偏好</h3><p>告訴我們孩子的年齡與喜好，獲得專屬的活動推薦。</p></div>
       <div class="step"><div class="no"></div><h3>探索 · 收藏 · 出發</h3><p>瀏覽精選內容，收藏心動活動，帶孩子一起去體驗。</p></div>
     </div>
@@ -503,7 +529,7 @@ section{position:relative}
 <!-- COMMUNITY -->
 <section class="sec" id="community" style="background:var(--cream-2);border-radius:0">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Our Community</span><h2>我們的社群</h2><p>精彩童趣  x  幸福序曲不只是資訊平台，更是一個屬於家長的溫暖社群 —— 在這裡分享、討論、彼此陪伴，一起把育兒路走得更踏實。</p></div>
+    <div class="sec-head reveal"><span class="eyebrow">Our Community</span><h2>我們的社群</h2><p>童序不只是資訊平台，更是一個屬於家長的溫暖社群 —— 在這裡分享、討論、彼此陪伴，一起把育兒路走得更踏實。</p></div>
     <div class="comm-grid">
       <a class="comm-card reveal d1" href="activities.html" style="display:block;cursor:pointer"><div class="ic">🎈</div><h3>親子活動分享</h3><p>最新活動資訊、家長交流討論、育兒經驗分享與第一手優惠。</p></a>
       <a class="comm-card reveal d2" href="2026全台遊樂園優惠分頁.html" style="display:block;cursor:pointer"><div class="ic">🏷️</div><h3>優惠資訊</h3><p>合作品牌與活動的專屬優惠，家長不再錯過每一次好機會。</p></a>
@@ -518,7 +544,7 @@ section{position:relative}
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Parents Love Us</span><h2>家長的真實回饋</h2><p>來自社群裡上千個家庭的分享 —— 這是我們最珍惜的肯定。</p></div>
     <div class="testi-grid">
-      <div class="testi-card reveal d1"><div class="stars">★★★★★</div><p>「以前找活動要滑好幾個網站，現在打開精彩童趣  x  幸福序曲就搞定。分類清楚、資訊又新，每個週末都不怕沒地方帶孩子去。」</p><div class="testi-who"><span class="ava tint-o">👩</span><div><b>Amy 媽咪</b><small>台北 · 5 歲女兒的媽</small></div></div></div>
+      <div class="testi-card reveal d1"><div class="stars">★★★★★</div><p>「以前找活動要滑好幾個網站，現在打開童序就搞定。分類清楚、資訊又新，每個週末都不怕沒地方帶孩子去。」</p><div class="testi-who"><span class="ava tint-o">👩</span><div><b>Amy 媽咪</b><small>台北 · 5 歲女兒的媽</small></div></div></div>
       <div class="testi-card reveal d2"><div class="stars">★★★★★</div><p>「最喜歡專家觀點那一區，很多育兒的疑惑都在這裡找到答案。感覺不只是找活動，更像有人陪著一起帶孩子。」</p><div class="testi-who"><span class="ava tint-g">👨</span><div><b>阿宏爸</b><small>台中 · 雙寶爸</small></div></div></div>
       <div class="testi-card reveal d3"><div class="stars">★★★★★</div><p>「社群裡的家長都好熱心，分享的都是實際去過的心得。第一手優惠也幫我們省了不少，真心推薦給每個家庭。」</p><div class="testi-who"><span class="ava tint-b">👩</span><div><b>Joyce</b><small>新竹 · 3 歲兒子的媽</small></div></div></div>
     </div>
@@ -542,12 +568,12 @@ section{position:relative}
 <!-- FAQ -->
 <section class="sec" id="faq">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>常見問題</h2><p>關於精彩童趣  x  幸福序曲，你可能想知道的事。</p></div>
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>常見問題</h2><p>關於童序，你可能想知道的事。</p></div>
     <div class="faq-wrap">
-      <details class="faq-item reveal d1" open><summary>加入精彩童趣  x  幸福序曲需要付費嗎？<span class="pm">+</span></summary><div class="ans">完全免費。註冊即可瀏覽所有精選內容、親子資源分類與社群討論，並接收專屬活動優惠通知。</div></details>
-      <details class="faq-item reveal d1"><summary>精彩童趣  x  幸福序曲上的活動資訊可靠嗎？<span class="pm">+</span></summary><div class="ans">所有活動與景點都由編輯團隊人工篩選整理，並結合家長的真實評價，確保你看到的都是值得信任的優質體驗。</div></details>
-      <details class="faq-item reveal d2"><summary>適合多大年齡的孩子？<span class="pm">+</span></summary><div class="ans">精彩童趣  x  幸福序曲涵蓋 0–12 歲的親子活動與資源。你可以依孩子的年齡設定偏好，系統會自動推薦最合適的內容。</div></details>
-      <details class="faq-item reveal d2"><summary>我是店家或品牌，想合作怎麼辦？<span class="pm">+</span></summary><div class="ans">非常歡迎！請透過頁尾的「合作洽詢」與我們聯繫，精彩童趣  x  幸福序曲團隊會協助你把優質的親子體驗帶給更多家庭。</div></details>
+      <details class="faq-item reveal d1" open><summary>加入童序需要付費嗎？<span class="pm">+</span></summary><div class="ans">完全免費。註冊即可瀏覽所有精選內容、親子資源分類與社群討論，並接收專屬活動優惠通知。</div></details>
+      <details class="faq-item reveal d1"><summary>童序上的活動資訊可靠嗎？<span class="pm">+</span></summary><div class="ans">所有活動與景點都由編輯團隊人工篩選整理，並結合家長的真實評價，確保你看到的都是值得信任的優質體驗。</div></details>
+      <details class="faq-item reveal d2"><summary>適合多大年齡的孩子？<span class="pm">+</span></summary><div class="ans">童序涵蓋 0–12 歲的親子活動與資源。你可以依孩子的年齡設定偏好，系統會自動推薦最合適的內容。</div></details>
+      <details class="faq-item reveal d2"><summary>我是店家或品牌，想合作怎麼辦？<span class="pm">+</span></summary><div class="ans">非常歡迎！請透過頁尾的「合作洽詢」與我們聯繫，童序團隊會協助你把優質的親子體驗帶給更多家庭。</div></details>
     </div>
   </div>
 </section>
@@ -558,8 +584,8 @@ section{position:relative}
     <div class="cta-banner reveal">
       <div class="deco deco-cta-1"><img src="assets/deco-science.png" alt="" aria-hidden="true"></div>
       <div class="deco deco-cta-2"><img src="assets/deco-stay.png" alt="" aria-hidden="true"></div>
-      <span class="eyebrow">Join </span>
-      <h2>加入精彩童趣  x  幸福序曲，一起陪伴孩子探索世界。</h2>
+      <span class="eyebrow">Join Tongxu</span>
+      <h2>加入童序，一起陪伴孩子探索世界。</h2>
       <p>成為社群的一員，與上千個家庭分享美好、發現更多可能。現在加入完全免費。</p>
       <div class="cta-btns">
         <a href="https://lin.ee/xN7zZSe" class="btn">立即免費加入 →</a>
@@ -574,7 +600,7 @@ section{position:relative}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand-col">
-        <div class="foot-brand"><img src="https://cdn.phototourl.com/member/2026-07-13-4467e805-3863-42b9-968a-718d6fa339cf.jpg" alt="精彩童趣  x  幸福序曲">精彩童趣  x  幸福序曲</div>
+        <div class="foot-brand"><img src="logo-clean.png" alt="童序">童序</div>
         <p>陪伴每個家庭，探索孩子成長的每一步。一個值得信任、彼此分享的親子成長媒體社群。</p>
        
       </div>
@@ -592,7 +618,7 @@ section{position:relative}
         <a href="#experts">專家觀點</a>
       </div>
       <div class="foot-col foot-news">
-        <h4>訂閱精彩童趣  x  幸福序曲週報</h4>
+        <h4>訂閱童序週報</h4>
         <p>每週精選親子活動與育兒好文，直接送到你的信箱。</p>
         <form class="news-form" onsubmit="return false">
           <input type="email" placeholder="輸入你的 Email" aria-label="Email">
@@ -601,7 +627,7 @@ section{position:relative}
       </div>
     </div>
     <div class="copy">
-      <span>© 2026 精彩童趣  x  幸福序曲 . 用心陪伴每個家庭。All rights reserved.</span>
+      <span>© 2026 童序 Tongxu. 用心陪伴每個家庭。All rights reserved.</span>
       <span class="fl"><a href="#">隱私權政策</a><a href="#">使用條款</a><a href="#">合作洽詢</a></span>
     </div>
   </div>
@@ -674,28 +700,28 @@ const quickSearchItems=[
     type:'景點內文',
     excerpt:'距離捷運公館站步行不到 10 分鐘，夏季開放水鄉庭園，也能參觀自來水博物館；親水樂園有大型滑水道與戲水設施。',
     keywords:'臺北自來水園區 台北 玩水 公館 水鄉庭園 親水樂園 滑水道',
-    url:'-site/spots.html'
+    url:'tongxu-site/spots.html'
   },
   {
     title:'陽光運動公園',
     type:'景點內文',
     excerpt:'陽光遊戲場提供多樣化親水設施，園區還有鞦韆、爬網、吊橋與溜滑梯，適合安排長時間親子活動。',
     keywords:'陽光運動公園 新店 小碧潭 免費 玩水 親水設施 溜滑梯',
-    url:'-site/spots.html'
+    url:'tongxu-site/spots.html'
   },
   {
     title:'重陽花漾水樂園',
     type:'景點內文',
     excerpt:'以花朵造型噴水設施與繽紛地景打造童趣戲水空間，可搭配新北大都會公園與自行車道安排整天放電。',
     keywords:'重陽花漾水樂園 三重 免費 噴水 戲水 新北大都會公園',
-    url:'-site/spots.html'
+    url:'tongxu-site/spots.html'
   },
   {
     title:'十四張歷史公園',
     type:'景點內文',
     excerpt:'以農村歷史為主題的特色遊戲場，穀倉造型遊戲塔結合溜滑梯、沙坑、爬網與水圳遊戲區。',
     keywords:'十四張歷史公園 新店 十四張 沙坑 水圳 溜滑梯 免費',
-    url:'-site/spots.html'
+    url:'tongxu-site/spots.html'
   },
   {
     title:'XPARK 水族館',
