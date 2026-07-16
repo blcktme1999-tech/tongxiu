@@ -275,8 +275,14 @@ section{position:relative}
 .cta-banner .btn.ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5)}
 .cta-banner .btn.ghost:hover{background:rgba(255,255,255,.25)}
 
+/* ---------- PARTNER LOGOS ---------- */
+.partner-logos{padding:0 0 96px}
+.logo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+.logo-card{height:128px;display:flex;align-items:center;justify-content:center;padding:24px 30px;background:#fff;border:1px solid rgba(51,48,42,.13);overflow:hidden}
+.logo-card img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+
 /* ---------- FOOTER ---------- */
-.footer{background:var(--ink);color:#EDE7DC;padding:74px 0 34px;margin-top:104px}
+.footer{background:var(--ink);color:#EDE7DC;padding:74px 0 34px;margin-top:0}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot-brand{display:flex;align-items:center;gap:12px;font-family:"Baloo 2";font-weight:800;font-size:1.4rem;margin-bottom:16px}
 .foot-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#fff;padding:0}
@@ -314,6 +320,7 @@ section{position:relative}
   .hero-visual{max-width:540px;margin:0 auto;width:100%}
   .foot-grid{grid-template-columns:1fr 1fr}
   .hero{padding:150px 0 80px}
+  .logo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 }
 @media(max-width:640px){
   .top-cover{padding-top:104px}
@@ -333,6 +340,9 @@ section{position:relative}
   .sec{padding:72px 0}
   .card-row,.comm-grid,.res-grid,.stats-grid{grid-template-columns:1fr}
   .stats,.cta-banner{padding:48px 26px}
+  .partner-logos{padding:0 0 72px}
+  .logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .logo-card{height:104px;padding:18px}
   .foot-grid{grid-template-columns:1fr}
   .hero-btns .btn,.hero-btns,.cta-btns .btn{width:100%}.hero-btns .btn,.cta-btns .btn{justify-content:center}
   .feat-hero{min-height:340px}.feat-hero .body{padding:28px 24px}.feat-hero h3{font-size:1.4rem}
@@ -595,7 +605,27 @@ section{position:relative}
     </div>
   </div>
 </section>
-  
+
+<!-- PARTNER LOGOS -->
+<section class="partner-logos" aria-label="合作平台圖案">
+  <div class="wrap">
+    <div class="logo-grid">
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2026/05/hotels_com_logo_2026.jpg" alt="Hotels.com" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2023/05/expedia_logo_new.png" alt="Expedia" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2020/06/agoda-new-logo.png" alt="Agoda" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2019/08/booking.com_.png" alt="Booking.com" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2023/04/klook_logo.png" alt="Klook" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2019/08/kkday.png" alt="KKday" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2019/08/trip.com_.png" alt="Trip.com" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2021/04/asiayo-logo-new.png" alt="AsiaYo" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2024/10/foodpanda_logo.png" alt="foodpanda" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2019/08/ubereat.png" alt="Uber Eats" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2021/07/Uber_Logo.png" alt="Uber" loading="lazy"></div>
+      <div class="logo-card"><img src="https://www.callingtaiwan.com.tw/wp-content/uploads/2026/03/line_go_logo_2026.jpg" alt="LINE GO" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer" id="footer">
   <div class="wrap">
